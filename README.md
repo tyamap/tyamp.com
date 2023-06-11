@@ -1,6 +1,6 @@
 # ブランディングHP
 
-[page3.jp](https://page3.jp)
+[tyamap.com](https://tyamap.com)
 
 ## ライブラリ・ツール
 

@@ -4,7 +4,7 @@ const path = require('path')
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `page3.jp`,
+    title: `tyamap.com`,
     siteUrl: `https://www.yourdomain.tld`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
