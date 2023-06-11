@@ -4,7 +4,7 @@ interface NavbarProps {
 }
 const Navbar = (props: NavbarProps) => {
   return (
-    <MantineNavbar width={{ base: '30%' }} p="lg">
+    <MantineNavbar width={{ md: '30%', xs: "100%" }} p="lg">
       <MantineNavbar.Section>
         <AspectRatio ratio={1} w="100%" mx="auto">
           <Avatar radius="100%" size="100%" />
