@@ -19,8 +19,8 @@ export const Layout = ({ children }: LayoutProps) => {
       <Header />
       <Container size="xl" px={0}>
         <Flex wrap="wrap">
-          <Navbar />
-          <Box w={{ md: '70%', xs: '100%' }}>
+          <Navbar w={{ sm: '30%', xs: '100%' }} />
+          <Box w={{ sm: '70%', xs: '100%' }}>
             <Tabs />
             <Main>
               {children}
