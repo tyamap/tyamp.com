@@ -18,27 +18,29 @@ const Tabs = (props: TabsProps) => {
   const location = useLocation()
 
   return (
-    <MantineTabs color="cyan" defaultValue="overview"
-      value={location.pathname === '/'
-        ? routeTab.value
-        : location.pathname.replaceAll('/', '')
-      }
-      onTabChange={(value) => {
-        if (value === routeTab.value) {
-          navigate('/')
-        } else {
-          navigate(`/${value}`)
+    <nav>
+      <MantineTabs color="cyan" defaultValue="overview"
+        value={location.pathname === '/'
+          ? routeTab.value
+          : location.pathname.replaceAll('/', '')
         }
-      }}
-    >
-      <MantineTabs.List>
-        {tabs.map((tab) => (
-          <MantineTabs.Tab key={tab.value} value={tab.value}>
-            {tab.title}
-          </MantineTabs.Tab>
-        ))}
-      </MantineTabs.List >
-    </MantineTabs >
+        onTabChange={(value) => {
+          if (value === routeTab.value) {
+            navigate('/')
+          } else {
+            navigate(`/${value}`)
+          }
+        }}
+      >
+        <MantineTabs.List>
+          {tabs.map((tab) => (
+            <MantineTabs.Tab key={tab.value} value={tab.value}>
+              {tab.title}
+            </MantineTabs.Tab>
+          ))}
+        </MantineTabs.List >
+      </MantineTabs >
+    </nav>
   );
 };
 
