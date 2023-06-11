@@ -1,6 +1,6 @@
 # ブランディングHP
 
-[page3.jp](page3.jp)
+[page3.jp](https://page3.jp)
 
 ## ライブラリ・ツール
 
