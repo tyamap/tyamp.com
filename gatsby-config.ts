@@ -6,12 +6,17 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `tyamap.com`,
     description: 'tyamap Homepage',
-    twitterUsername: `@tyamap03`,
     image: '/icon.png',
     siteUrl: `https://www.tyamap.com`,
     social: {
       twitter: `@tyamap03`,
+      github: 'tyamap',
     },
+    profile: {
+      id: 'tyamap',
+      name: 'Tomoya Yamashita',
+      labels: ['web developer'],
+    }
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -21,6 +26,8 @@ const config: GatsbyConfig = {
     'gatsby-plugin-mantine',
     'gatsby-plugin-emotion',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-root-import',
       options: {

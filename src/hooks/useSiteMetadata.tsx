@@ -7,9 +7,18 @@ export const useSiteMetadata = () => {
         siteMetadata {
           title
           description
-          twitterUsername
           image
           siteUrl
+          social {
+            twitter
+            github
+          }
+          profile {
+            id
+            name
+            labels
+            avatar
+          }
         }
       }
     }
