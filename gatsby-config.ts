@@ -5,7 +5,10 @@ const path = require('path')
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `tyamap.com`,
-    siteUrl: `https://www.yourdomain.tld`
+    description: 'tyamap Homepage',
+    twitterUsername: `@tyamap03`,
+    image: '/icon.png',
+    siteUrl: `https://www.tyamap.com`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
