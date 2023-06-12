@@ -17,7 +17,6 @@ export const useSiteMetadata = () => {
             id
             name
             labels
-            avatar
           }
         }
       }
