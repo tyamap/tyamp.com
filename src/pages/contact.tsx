@@ -1,5 +1,6 @@
 import { HeadFC } from "gatsby";
 import { Layout } from "src/components/layout";
+import SEO from "src/components/SEO";
 
 interface ContactPageProps {
 
@@ -15,4 +16,4 @@ const ContactPage = (props: ContactPageProps) => {
 
 export default ContactPage;
 
-export const Head: HeadFC = () => <title>Contact</title>
+export const Head: HeadFC = () => <SEO pathname="/contact" title="Contact" />
