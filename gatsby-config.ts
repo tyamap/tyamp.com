@@ -17,6 +17,7 @@ const config: GatsbyConfig = {
   plugins: [
     'gatsby-plugin-mantine',
     'gatsby-plugin-emotion',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
