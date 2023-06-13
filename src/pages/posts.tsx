@@ -1,3 +1,4 @@
+import { Title } from "@mantine/core";
 import { HeadFC } from "gatsby";
 import { Layout } from "src/components/layout";
 import SEO from "src/components/SEO";
@@ -9,7 +10,7 @@ const PostsPage = (props: PostsPageProps) => {
 
   return (
     <Layout>
-      <h1>Posts</h1>
+      <Title>Posts</Title>
     </Layout>
   );
 };

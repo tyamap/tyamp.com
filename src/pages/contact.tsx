@@ -1,3 +1,4 @@
+import { Title } from "@mantine/core";
 import { HeadFC } from "gatsby";
 import { Layout } from "src/components/layout";
 import SEO from "src/components/SEO";
@@ -9,7 +10,7 @@ const ContactPage = (props: ContactPageProps) => {
 
   return (
     <Layout>
-      <h1>Contact</h1>
+      <Title>Contact</Title>
     </Layout>
   );
 };
