@@ -3,12 +3,11 @@ import { useProfile } from "src/hooks/useProfile";
 import { GatsbyImage } from 'gatsby-plugin-image'
 
 interface AsideProps {
-  w: SystemProp<SpacingValue>
 }
 const Aside = (props: AsideProps) => {
   const profile = useProfile()
   return (
-    <MantineAside height="auto" w={props.w} p="lg" withBorder={false} sx={{ borderRight: '1px solid #e9ecef' }}>
+    <MantineAside height="auto" p="lg" withBorder={false} sx={{ borderRight: '1px solid #e9ecef' }}>
       <MantineAside.Section>
         <AspectRatio ratio={1} w="100%" mx="auto" maw={360}>
           <GatsbyImage
