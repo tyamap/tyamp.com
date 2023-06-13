@@ -1,4 +1,9 @@
 import type { GatsbyConfig } from "gatsby";
+import dotenv from "dotenv";
+
+dotenv.config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 const path = require('path')
 
@@ -33,6 +38,13 @@ const config: GatsbyConfig = {
       options: {
         src: path.join(__dirname, 'src')
       }
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
     },
   ]
 };
