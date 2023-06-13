@@ -15,7 +15,7 @@ const Aside = (props: AsideProps) => {
           <StaticImage
             src="../../images/avatar.jpg"
             alt="Tyamap, a man long legs..."
-            style={{ borderRadius: '100%', width: '100%' }} />
+            style={{ borderRadius: '100%', width: '100%', zIndex: 1 }} />
         </AspectRatio>
       </MantineAside.Section>
       <MantineAside.Section>
