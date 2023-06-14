@@ -14,7 +14,9 @@ export const useProfile = () => {
           name
           category
           icon {
-            gatsbyImageData
+            file {
+              url
+            }
           }
         }
         socials {
