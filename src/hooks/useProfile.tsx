@@ -11,7 +11,8 @@ export const useProfile = () => {
           description
         }
         skills {
-          link
+          name
+          category
           icon {
             gatsbyImageData
           }
