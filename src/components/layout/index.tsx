@@ -23,12 +23,10 @@ export const Layout = ({ children }: LayoutProps) => {
             <Aside />
           </Grid.Col>
           <Grid.Col span="auto">
-            <Box>
-              <Tabs />
-              <Main>
-                {children}
-              </Main>
-            </Box>
+            <Tabs />
+            <Main>
+              {children}
+            </Main>
           </Grid.Col>
         </Grid>
       </Container>
