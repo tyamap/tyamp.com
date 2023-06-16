@@ -2,17 +2,19 @@ import { Badge as MantineBadge, Tabs as MantineTabs } from '@mantine/core'
 import { useLocation } from "@reach/router"
 import { navigate } from "gatsby"
 import { IconBook, IconNotebook, IconBriefcase, IconBookmark, IconMail } from '@tabler/icons-react';
+import { useProjects } from 'src/hooks/useProjects';
+import { useClientWorks } from 'src/hooks/useClientWorks';
 
 
 const Badge = ({ children }: { children: React.ReactNode }) => {
   return <MantineBadge color="cyan" size="md" p={0} w="xl" h="lg">{children}</MantineBadge>
 }
-type Tab = { title: string, value: string, icon?: JSX.Element, rightSection?: JSX.Element }
+type Tab = { title: string, value: string, icon?: JSX.Element, count?: number }
 const tabs: Tab[] = [
   { title: 'Overview', value: 'overview', icon: <IconBook /> },
-  { title: 'Projects', value: 'projects', icon: <IconNotebook />, rightSection: <Badge>12</Badge> },
-  { title: 'Works', value: 'works', icon: <IconBriefcase />, rightSection: <Badge>4</Badge> },
-  { title: 'Posts', value: 'posts', icon: <IconBookmark />, rightSection: <Badge>120</Badge> },
+  { title: 'Projects', value: 'projects', icon: <IconNotebook /> },
+  { title: 'Works', value: 'works', icon: <IconBriefcase /> },
+  { title: 'Posts', value: 'posts', icon: <IconBookmark /> },
   { title: 'Contact', value: 'contact', icon: <IconMail /> },
 ]
 const rootTab = tabs[0]
@@ -21,6 +23,10 @@ interface TabsProps {
 }
 const Tabs = (props: TabsProps) => {
   const location = useLocation()
+
+  // コンテンツの総数を取得して、タブにバッジを表示
+  tabs[1].count = useProjects().totalCount
+  tabs[2].count = useClientWorks().totalCount
 
   return (
     <nav>
@@ -42,7 +48,7 @@ const Tabs = (props: TabsProps) => {
           {tabs.map((tab) => (
             <MantineTabs.Tab key={tab.value} value={tab.value}
               icon={tab.icon}
-              rightSection={tab.rightSection}
+              rightSection={tab.count && <Badge>{tab.count}</Badge>}
             >
               {tab.title}
             </MantineTabs.Tab>
