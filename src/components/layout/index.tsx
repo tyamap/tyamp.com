@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Grid } from "@mantine/core"
+import { Box, Container, Grid } from "@mantine/core"
 import { MantineProvider } from '@mantine/core';
 import { theme } from 'src/theme'
 import Header from "src/components/layout/Header";
@@ -18,7 +18,7 @@ export const Layout = ({ children }: LayoutProps) => {
     >
       <Header />
       <Container size="xl" px={0}>
-        <Grid>
+        <Grid w="100%">
           <Grid.Col xs={12} sm={3}>
             <Aside />
           </Grid.Col>

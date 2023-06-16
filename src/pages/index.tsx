@@ -10,10 +10,9 @@ const IndexPage: React.FC<PageProps> = () => {
   const profile = useProfile()
   return (
     <Layout>
-      <Title>Overview</Title>
+      <Title display="none">Overview</Title>
       <Title order={2}>About me</Title>
-      <Text>{profile?.description?.description}</Text>
-      <Title order={2}>Skills</Title>
+      <Text mb="sm">{profile?.description?.description}</Text>
       {categories?.map((category) => (
         <React.Fragment>
           <Title key={category} order={3}>{category}</Title>

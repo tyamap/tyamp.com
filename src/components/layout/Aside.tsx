@@ -7,7 +7,7 @@ interface AsideProps {
 const Aside = (props: AsideProps) => {
   const profile = useProfile()
   return (
-    <MantineAside height="auto" p="lg" withBorder={false} sx={{ borderRight: '1px solid #e9ecef' }}>
+    <MantineAside p="lg" withBorder={false} >
       <MantineAside.Section>
         <AspectRatio ratio={1} w="100%" mx="auto" maw={360}>
           <GatsbyImage
