@@ -46,6 +46,20 @@ const config: GatsbyConfig = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://zenn.dev/tyamap/feed?include_scraps=1&all=1`,
+        name: `Zenn`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://note.com/griefcaretech_ty/rss`,
+        name: `Note`,
+      }
+    },
   ]
 };
 
