@@ -1,5 +1,5 @@
-import { Badge, Group, Title, Text, Flex, Box, Stack, ActionIcon } from "@mantine/core";
-import { IconLink, IconLinkOff } from "@tabler/icons-react";
+import { Badge, Group, Title, Text, Box, Stack } from "@mantine/core";
+import { IconLink, IconLock } from "@tabler/icons-react";
 import { HeadFC } from "gatsby";
 import { Layout } from "src/components/layout";
 import SEO from "src/components/SEO";
@@ -14,37 +14,37 @@ const WorksPage = (props: WorksPageProps) => {
 
   return (
     <Layout>
-      <Title mb="md">Client works</Title>
+      <Title pb="md" sx={{ borderBottom: '1px lightgray solid' }}>Client works</Title>
       {works?.nodes?.map((work) => (
         <Box
           key={work.name}
-          p="md"
+          py="md"
+          px="xs"
           sx={{
             borderBottom: '1px lightgray solid',
-            borderTop: '1px lightgray solid'
           }}
         >
           <Stack spacing="xs">
             <Group spacing="xs">
+              {work.url
+                ? <IconLink />
+                : <IconLock />
+              }
               <a href={work.url || undefined} target="_blank">
                 <Title order={3}>
                   {work?.name}
                 </Title>
               </a>
-              {work.url
-                ? <IconLink />
-                : <IconLinkOff />
-              }
             </Group>
             <Text>Client: {work.client}</Text>
             <Group spacing="xs">
+              {work.startDate &&
+                <Text c="dimmed">{formatDate(work.startDate)} ~</Text>
+              }
               {work.tags?.map((tag) => (
                 // TODO: use stringToColorCode
                 <Badge key={tag} color="cyan">{tag}</Badge>
               ))}
-              {work.startDate &&
-                <Text c="dimmed">{formatDate(work.startDate)} ~</Text>
-              }
             </Group>
           </Stack>
         </Box>

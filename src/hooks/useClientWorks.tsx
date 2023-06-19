@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 export const useClientWorks = () => {
   const data = useStaticQuery<Queries.Query>(graphql`
     query  {
-      allContentfulClientWork {
+      allContentfulClientWork(sort: {startDate: DESC}) {
         totalCount
         nodes {
           tags
