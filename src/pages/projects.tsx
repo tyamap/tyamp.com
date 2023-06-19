@@ -1,4 +1,4 @@
-import { Card, Title, Text, Flex, Grid, Stack, Badge, Group } from "@mantine/core";
+import { Card, Title, Text, Flex, Grid, Stack, Badge, Group, ActionIcon } from "@mantine/core";
 import { HeadFC } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { Layout } from "src/components/layout";
@@ -34,18 +34,20 @@ const ProjectsPage = (props: ProjectsPageProps) => {
                 </Text>
                 <Flex align="center" sx={{ justifyContent: 'space-between' }}>
                   <Group spacing="xs">
+                    {project.startDate &&
+                      <Text c="dimmed">{formatDate(project.startDate)} ~</Text>
+                    }
                     {project?.tags?.map((tag) => (
                       // TODO: use stringToColorCode
                       <Badge key={tag} color="cyan">{tag}</Badge>
                     ))}
-                    {project.startDate &&
-                      <Text c="dimmed">{formatDate(project.startDate)} ~</Text>
-                    }
                   </Group>
                   {project.githubLink && (
-                    <a href={project.githubLink} target="_blank" rel="noopener">
-                      <StaticImage src="../images/github-mark.png" alt="" width={32} />
-                    </a>
+                    <ActionIcon>
+                      <a href={project.githubLink} target="_blank" rel="noopener">
+                        <StaticImage src="../images/github-mark.png" alt="" width={32} />
+                      </a>
+                    </ActionIcon>
                   )}
                 </Flex>
               </Grid.Col>
