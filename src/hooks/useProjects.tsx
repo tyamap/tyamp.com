@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 export const useProjects = () => {
   const data = useStaticQuery<Queries.Query>(graphql`
     query  {
-      allContentfulProject {
+      allContentfulProject(sort: {startDate: DESC}) {
         totalCount
         nodes {
           description {

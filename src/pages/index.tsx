@@ -14,7 +14,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <Title order={2}>About me</Title>
       <Text mb="sm">{profile?.description?.description}</Text>
       {categories?.map((category) => (
-        <React.Fragment>
+        <React.Fragment key={category}>
           <Title key={category} order={3}>{category}</Title>
           <SimpleGrid
             cols={6}

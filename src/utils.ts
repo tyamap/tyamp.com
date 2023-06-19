@@ -7,13 +7,15 @@ export const formatDate = (date: string) => {
   return `${year}.${month}`;
 }
 
+// web標準のカラー配列
+const COLORS = [
+  'red', 'pink', 'grape', 'violet', 'indigo', 'blue', 'cyan', 'green', 'lime', 'yellow', 'orange', 'teal'
+];
+
 // 文字列からカラーコードを生成する
-export const stringToColorCode = (str: string) => {
+export const stringToColor = (str: string) => {
   // 文字列を数値に変換
   const num = str.split('').reduce((acc, cur) => acc + cur.charCodeAt(0), 0);
-  // 16進数に変換
-  const hex = num.toString(16);
-  // 6桁になるように0でパディング
-  const color = `000000${hex}`.slice(-6);
-  return `#${color}`;
+  const index = num % COLORS.length;
+  return COLORS[index];
 }

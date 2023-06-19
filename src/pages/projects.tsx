@@ -2,9 +2,10 @@ import { Card, Title, Text, Flex, Grid, Stack, Badge, Group, ActionIcon } from "
 import { HeadFC } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { Layout } from "src/components/layout";
+import Link from "src/components/Link";
 import SEO from "src/components/SEO";
 import { useProjects } from "src/hooks/useProjects";
-import { formatDate } from "src/utils";
+import { formatDate, stringToColor } from "src/utils";
 
 interface ProjectsPageProps {
 
@@ -14,21 +15,27 @@ const ProjectsPage = (props: ProjectsPageProps) => {
 
   return (
     <Layout>
-      <Title mb="md">Projects</Title>
+      <Title display="none">Projects</Title>
       <Stack>
         {projects?.nodes?.map((project) => (
-          <Card key={project?.name} withBorder p={0} component="a" href={project.url || '#'} target="_blank">
+          <Card key={project?.name} withBorder p={0}>
             <Grid >
               <Grid.Col xs={12} sm={4}>
-                <GatsbyImage
-                  image={project.thumbnail?.gatsbyImageData!}
-                  alt={`${project.name} image`}
-                />
+                <Link href={project.url}>
+                  <GatsbyImage
+                    image={project.thumbnail?.gatsbyImageData!}
+                    alt={`${project.name} image`}
+                  />
+                </Link>
               </Grid.Col>
               <Grid.Col xs={12} sm={8} p="md"
                 sx={{ display: 'flex', flexDirection: 'column' }}
               >
-                <Title order={3}>{project?.name}</Title>
+                <Title order={3}>
+                  <Link href={project.url}>
+                    {project?.name}
+                  </Link>
+                </Title>
                 <Text sx={{ flexGrow: 1 }}>
                   {project?.description?.description}
                 </Text>
@@ -38,16 +45,15 @@ const ProjectsPage = (props: ProjectsPageProps) => {
                       <Text c="dimmed">{formatDate(project.startDate)} ~</Text>
                     }
                     {project?.tags?.map((tag) => (
-                      // TODO: use stringToColorCode
-                      <Badge key={tag} color="cyan">{tag}</Badge>
+                      <Badge key={tag} color={stringToColor(tag!)}>{tag}</Badge>
                     ))}
                   </Group>
                   {project.githubLink && (
-                    <ActionIcon>
-                      <a href={project.githubLink} target="_blank" rel="noopener">
+                    <Link href={project.githubLink}>
+                      <ActionIcon>
                         <StaticImage src="../images/github-mark.png" alt="" width={32} />
-                      </a>
-                    </ActionIcon>
+                      </ActionIcon>
+                    </Link>
                   )}
                 </Flex>
               </Grid.Col>
