@@ -1,4 +1,4 @@
-import { Title, Text, Image, Flex, SimpleGrid } from "@mantine/core"
+import { Title, Text, Image, Flex, SimpleGrid, Timeline } from "@mantine/core"
 import type { HeadFC, PageProps } from "gatsby"
 import React from "react"
 import { Layout } from "src/components/layout"
@@ -11,7 +11,7 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <Layout>
       <Title display="none">Overview</Title>
-      <Title order={2}>About me</Title>
+      <Title order={2} id="about" mb="md">About me</Title>
       <Text mb="sm">{profile?.description?.description}</Text>
       {categories?.map((category) => (
         <React.Fragment key={category}>
@@ -35,7 +35,19 @@ const IndexPage: React.FC<PageProps> = () => {
         </React.Fragment>
       ))
       }
-      <Title order={2}>Biography</Title>
+      <Title id="biography" order={2} mb="md">Biography</Title>
+      <Timeline active={0} py="md">
+        {profile?.histories?.map((history) => {
+          const time = history?.split(",")[0]
+          const content = history?.split(",")[1]
+          return <Timeline.Item
+            key={history}
+            title={time}
+          >
+            <Text>{content}</Text>
+          </Timeline.Item>
+        })}
+      </Timeline>
     </Layout >
   )
 }

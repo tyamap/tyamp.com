@@ -7,6 +7,7 @@ export const useProfile = () => {
         name
         userId
         label
+        histories
         description {
           description
         }
