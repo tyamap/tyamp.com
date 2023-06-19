@@ -7,6 +7,16 @@ export const formatDate = (date: string) => {
   return `${year}.${month}`;
 }
 
+export const formatPubDate = (date: string) => {
+  const dateObj = new Date(date);
+  const year = dateObj.getFullYear();
+  // 月はゼロパディングする
+  const month = `0${dateObj.getMonth() + 1}`.slice(-2);
+  // 日はゼロパディングする
+  const day = `0${dateObj.getDate()}`.slice(-2);
+  return `${year}.${month}.${day}`;
+}
+
 // web標準のカラー配列
 const COLORS = [
   'red', 'pink', 'grape', 'violet', 'indigo', 'blue', 'cyan', 'green', 'lime', 'yellow', 'orange', 'teal'

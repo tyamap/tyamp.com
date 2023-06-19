@@ -4,6 +4,7 @@ import { navigate } from "gatsby"
 import { IconBook, IconNotebook, IconBriefcase, IconBookmark, IconMail } from '@tabler/icons-react';
 import { useProjects } from 'src/hooks/useProjects';
 import { useClientWorks } from 'src/hooks/useClientWorks';
+import { useFeedPosts } from 'src/hooks/useFeedPosts';
 
 
 const Badge = ({ children }: { children: React.ReactNode }) => {
@@ -27,6 +28,7 @@ const Tabs = (props: TabsProps) => {
   // コンテンツの総数を取得して、タブにバッジを表示
   tabs[1].count = useProjects().totalCount
   tabs[2].count = useClientWorks().totalCount
+  tabs[3].count = useFeedPosts().totalCount
 
   return (
     <nav>
