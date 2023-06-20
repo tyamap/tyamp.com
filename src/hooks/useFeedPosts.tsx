@@ -1,6 +1,7 @@
 import { useStaticQuery, graphql } from "gatsby"
 
 type Post = {
+  id: string | null
   title: string | null
   link: string | null
   pubDate: string | null
@@ -12,6 +13,7 @@ export const useFeedPosts = () => {
   query {
     allFeedZenn {
       nodes {
+        id
         title
         link
         pubDate
@@ -20,6 +22,7 @@ export const useFeedPosts = () => {
     }
     allFeedNote {
       nodes {
+        id
         title
         link
         pubDate

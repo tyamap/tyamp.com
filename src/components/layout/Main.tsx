@@ -5,7 +5,7 @@ interface MainProps {
 }
 const Main = (props: MainProps) => {
   return (
-    <Box component="main" p='md'>
+    <Box component="main" py="md" px='xs'>
       {props.children}
     </Box>
   );
