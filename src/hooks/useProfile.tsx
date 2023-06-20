@@ -23,7 +23,9 @@ export const useProfile = () => {
         socials {
           link
           icon {
-            gatsbyImageData
+            file {
+              url
+            }
           }
         }
         avatar {

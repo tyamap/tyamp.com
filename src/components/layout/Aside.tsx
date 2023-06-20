@@ -1,6 +1,7 @@
-import { Text, Aside as MantineAside, Title, AspectRatio, Badge } from "@mantine/core"
+import { Text, Aside as MantineAside, Title, AspectRatio, Badge, ActionIcon, Group } from "@mantine/core"
 import { useProfile } from "src/hooks/useProfile";
 import { GatsbyImage } from 'gatsby-plugin-image'
+import Link from "../Link";
 
 interface AsideProps {
 }
@@ -9,7 +10,7 @@ const Aside = (props: AsideProps) => {
   return (
     <MantineAside
       h="auto"
-      p={{sx: "md", sm: 'lg'}}
+      p={{ sx: "md", sm: 'lg' }}
       withBorder={false}
       sx={{
         "@media (max-width: 767px)": {
@@ -30,6 +31,18 @@ const Aside = (props: AsideProps) => {
         <Title order={2}>{profile?.name}</Title>
         <Text c="dimmed">{profile?.userId}</Text>
         <Badge color="cyan">{profile?.label}</Badge>
+        <Group m="xs" spacing="xs">
+          {profile?.socials?.map((social) => {
+            return (
+              <Link href={social?.link} key={social?.link}>
+                <ActionIcon>
+                  <img src={social?.icon?.file?.url || ''} width={24} />
+                </ActionIcon>
+              </Link>
+            )
+          })
+          }
+        </Group>
       </MantineAside.Section>
     </MantineAside>
   );
