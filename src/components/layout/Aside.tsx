@@ -1,4 +1,4 @@
-import { Text, Aside as MantineAside, Title, AspectRatio, Badge, Grid } from "@mantine/core"
+import { Text, Aside as MantineAside, Title, AspectRatio, Badge } from "@mantine/core"
 import { useProfile } from "src/hooks/useProfile";
 import { GatsbyImage } from 'gatsby-plugin-image'
 
