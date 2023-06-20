@@ -56,7 +56,7 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-source-rss-feed`,
       options: {
-        url: `https://note.com/griefcaretech_ty/rss`,
+        url: `https://note.com/tyamap/rss`,
         name: `Note`,
       }
     },

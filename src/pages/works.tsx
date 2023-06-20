@@ -55,4 +55,4 @@ const WorksPage = (props: WorksPageProps) => {
 
 export default WorksPage;
 
-export const Head: HeadFC = () => <SEO pathname="/works" title="ClientWorks" />
+export const Head: HeadFC = () => <SEO pathname="/works" title="Client works" />

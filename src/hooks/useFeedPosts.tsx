@@ -49,7 +49,10 @@ export const useFeedPosts = () => {
 
   // 日付でソート
   const nodes = [...zennPosts, ...notePosts].sort((a, b) => {
-    return a.pubDate! > b.pubDate! ? 1 : -1
+    // Date型で比べる
+    const aDate = new Date(a.pubDate!)
+    const bDate = new Date(b.pubDate!)
+    return bDate.getTime() - aDate.getTime()
   })
 
   return { totalCount, nodes }
