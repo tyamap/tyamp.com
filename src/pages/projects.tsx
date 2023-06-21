@@ -1,4 +1,4 @@
-import { Card, Title, Text, Flex, Grid, Stack, Badge, Group, ActionIcon } from "@mantine/core";
+import { Card, Title, Text, Flex, Grid, Stack, Badge, Group } from "@mantine/core";
 import { HeadFC } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { Layout } from "src/components/layout";

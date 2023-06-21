@@ -11,7 +11,7 @@ const ContactPage = (props: ContactPageProps) => {
     <Layout>
       <Title display="none">Contact</Title>
       <Container size="sm" >
-        <Title order={2}>Send Message</Title>
+        <Title order={2} mb="md">Send Message</Title>
         <form action={process.env.GATSBY_FORM_ENDPOINT} method="POST">
           <Stack>
             <TextInput

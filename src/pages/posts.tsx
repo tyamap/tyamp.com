@@ -1,4 +1,4 @@
-import { Card, Title, Text, SimpleGrid, Image, Box } from "@mantine/core";
+import { Card, Title, Text, SimpleGrid, Image } from "@mantine/core";
 import { HeadFC } from "gatsby";
 import { Layout } from "src/components/layout";
 import Link from "src/components/Link";
