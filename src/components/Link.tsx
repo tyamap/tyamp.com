@@ -14,7 +14,7 @@ const Link = (props: LinkProps) => {
       rel="noopener"
       // @ts-ignore
       css={style}
-      ariaLabel={props.label}
+      aria-label={props.label}
     >
       {children}
     </a>
