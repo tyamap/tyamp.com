@@ -17,17 +17,22 @@ const ContactPage = (props: ContactPageProps) => {
             <TextInput
               label="Full name"
               type="text"
+              name="name"
+              autoComplete="name"
               withAsterisk
               required
             />
             <TextInput
               label="Email address"
               type="email"
+              name="email"
+              autoComplete="email"
               withAsterisk
               required
             />
             <Textarea
               label="Message"
+              name="message"
               withAsterisk
               required
             />
