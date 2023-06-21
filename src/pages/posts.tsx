@@ -22,7 +22,7 @@ const PostsPage = (props: PostsPageProps) => {
         {zennPosts.nodes.map((post) => (
           <Card key={post.id} p="xs" withBorder>
             <Card.Section >
-              <Link href={post.link}>
+              <Link href={post.link} label={post.title!}>
                 {/* TODO: サムネイルを取得して表示 */}
                 <Image src={`https://picsum.photos/seed/${post.id}/200/300`}
                   alt={post.title!}

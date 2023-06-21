@@ -21,7 +21,7 @@ const ProjectsPage = (props: ProjectsPageProps) => {
           <Card key={project?.name} withBorder p={0}>
             <Grid >
               <Grid.Col xs={12} sm={4}>
-                <Link href={project.url}>
+                <Link href={project.url} label={project.name!}>
                   <GatsbyImage
                     image={project.thumbnail?.gatsbyImageData!}
                     alt={`${project.name} image`}
@@ -49,10 +49,8 @@ const ProjectsPage = (props: ProjectsPageProps) => {
                     ))}
                   </Group>
                   {project.githubLink && (
-                    <Link href={project.githubLink}>
-                      <ActionIcon>
-                        <StaticImage src="../images/github-mark.png" alt="" width={32} />
-                      </ActionIcon>
+                    <Link href={project.githubLink} label="github link">
+                      <StaticImage src="../images/github-mark.png" alt="" width={32} />
                     </Link>
                   )}
                 </Flex>

@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 interface LinkProps {
   children: React.ReactNode;
   href: string | undefined | null;
+  label?: string;
 }
 const Link = (props: LinkProps) => {
   const { children, href } = props;
@@ -13,6 +14,7 @@ const Link = (props: LinkProps) => {
       rel="noopener"
       // @ts-ignore
       css={style}
+      ariaLabel={props.label}
     >
       {children}
     </a>

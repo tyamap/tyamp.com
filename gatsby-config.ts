@@ -11,7 +11,7 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `tyamap.com`,
     description: 'tyamap Homepage',
-    image: '/icon.png',
+    image: '/icon.jpg',
     siteUrl: `https://www.tyamap.com`,
     social: {
       twitter: `@tyamap03`,

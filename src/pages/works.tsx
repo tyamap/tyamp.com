@@ -31,11 +31,11 @@ const WorksPage = (props: WorksPageProps) => {
                 ? <IconLink />
                 : <IconLock />
               }
-              <Link href={work.url}>
-                <Title order={3}>
+              <Title order={3}>
+                <Link href={work.url}>
                   {work?.name}
-                </Title>
-              </Link>
+                </Link>
+              </Title>
             </Group>
             <Text>Client: {work.client}</Text>
             <Group spacing="xs">
