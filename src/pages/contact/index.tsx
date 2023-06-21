@@ -1,11 +1,7 @@
 import { Title, TextInput, Textarea, Button, Stack, Container } from "@mantine/core";
 import { HeadFC } from "gatsby";
 import { Layout } from "src/components/layout";
-import { useForm, SubmitHandler } from "react-hook-form"
-import { yupResolver } from '@hookform/resolvers/yup'
-import * as yup from 'yup'
 import SEO from "src/components/SEO";
-import axios from "axios";
 
 interface ContactPageProps { }
 
