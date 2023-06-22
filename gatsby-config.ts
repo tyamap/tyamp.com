@@ -34,10 +34,16 @@ const config: GatsbyConfig = {
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: process.env.GTM_ID,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-root-import',
       options: {
         src: path.join(__dirname, 'src')
-      }
+      },
     },
     {
       resolve: `gatsby-source-contentful`,
@@ -51,14 +57,14 @@ const config: GatsbyConfig = {
       options: {
         url: `https://zenn.dev/tyamap/feed?include_scraps=1&all=1`,
         name: `Zenn`,
-      }
+      },
     },
     {
       resolve: `gatsby-source-rss-feed`,
       options: {
         url: `https://note.com/tyamap/rss`,
         name: `Note`,
-      }
+      },
     },
   ]
 };

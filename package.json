@@ -24,6 +24,7 @@
     "@tabler/icons-react": "^2.22.0",
     "gatsby": "^5.10.0",
     "gatsby-plugin-emotion": "^8.10.0",
+    "gatsby-plugin-google-tagmanager": "^5.11.0",
     "gatsby-plugin-image": "^3.10.0",
     "gatsby-plugin-mantine": "^5.0",
     "gatsby-plugin-sharp": "^5.10.0",
