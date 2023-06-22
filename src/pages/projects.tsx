@@ -19,8 +19,8 @@ const ProjectsPage = (props: ProjectsPageProps) => {
       <Stack>
         {projects?.nodes?.map((project) => (
           <Card key={project?.name} withBorder p={0}>
-            <Grid >
-              <Grid.Col xs={12} sm={4}>
+            <Grid m={0}>
+              <Grid.Col xs={12} sm={4} p={0}>
                 <Link href={project.url} label={project.name!}>
                   <GatsbyImage
                     image={project.thumbnail?.gatsbyImageData!}
@@ -28,7 +28,7 @@ const ProjectsPage = (props: ProjectsPageProps) => {
                   />
                 </Link>
               </Grid.Col>
-              <Grid.Col xs={12} sm={8} p="md"
+              <Grid.Col xs={12} sm={8} p={{sm: "xs", xs: 0}}
                 sx={{ display: 'flex', flexDirection: 'column' }}
               >
                 <Title order={3}>

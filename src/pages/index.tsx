@@ -12,7 +12,7 @@ const IndexPage: React.FC<PageProps> = () => {
     <Layout>
       <Title display="none">Overview</Title>
       <Title order={2} id="about" mb="md">About me</Title>
-      <Text mb="sm">{profile?.description?.description}</Text>
+      <Text mb="sm" sx={{whiteSpace: 'break-spaces'}}>{profile?.description?.description}</Text>
       <Title order={2} id="about" mb="md">Skills</Title>
       <Text mb="sm">Hover over the icon to check the years of experience</Text>
       {categories?.map((category) => (

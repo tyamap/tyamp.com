@@ -28,8 +28,8 @@ const Aside = (props: AsideProps) => {
         </AspectRatio>
       </MantineAside.Section>
       <MantineAside.Section sx={{ flexBasis: "75%" }}>
-        <Title order={2}>{profile?.name}</Title>
-        <Text c="dimmed">{profile?.userId}</Text>
+        <Title order={2}>{profile?.userId}</Title>
+        <Text c="dimmed">{profile?.name}</Text>
         <Badge color="cyan">{profile?.label}</Badge>
         <Group m="xs" spacing="xs">
           {profile?.socials?.map((social) => {
