@@ -1,4 +1,4 @@
-import { Title, Text, Image, Flex, SimpleGrid, Timeline } from "@mantine/core"
+import { Title, Text, Image, Flex, SimpleGrid, Timeline, HoverCard } from "@mantine/core"
 import type { HeadFC, PageProps } from "gatsby"
 import React from "react"
 import { Layout } from "src/components/layout"
@@ -13,6 +13,8 @@ const IndexPage: React.FC<PageProps> = () => {
       <Title display="none">Overview</Title>
       <Title order={2} id="about" mb="md">About me</Title>
       <Text mb="sm">{profile?.description?.description}</Text>
+      <Title order={2} id="about" mb="md">Skills</Title>
+      <Text mb="sm">Hover over the icon to check the years of experience</Text>
       {categories?.map((category) => (
         <React.Fragment key={category}>
           <Title key={category} order={3}>{category}</Title>
@@ -21,16 +23,25 @@ const IndexPage: React.FC<PageProps> = () => {
             breakpoints={[{ maxWidth: 'xs', cols: 3 }]}
             my="sm"
           >
-            {profile?.skills?.filter((skill) => skill?.category === category)?.map((skill) => (
-              <Flex direction="column" align="center" key={skill?.name}>
-                <Image
-                  src={skill?.icon?.file?.url || ""}
-                  alt={`${skill?.name} icon`}
-                  height={32} width={32}
-                />
-                <Text c="dimmed">{skill?.name}</Text>
-              </Flex>
-            ))}
+            {profile?.skills?.filter((skill) => skill?.category === category)
+              .sort((a, b) => (b?.level || 0) - (a?.level || 0))
+              .map((skill) => (
+                <Flex direction="column" align="center" key={skill?.name}>
+                  <HoverCard offset={-1} closeDelay={500}>
+                    <HoverCard.Target>
+                      <Image
+                        src={skill?.icon?.file?.url || ""}
+                        alt={`${skill?.name} icon`}
+                        height={32} width={32}
+                      />
+                    </HoverCard.Target>
+                    <HoverCard.Dropdown p="xs">
+                      {(skill?.level || 0) > 0 ? `${skill?.level}+ years` : "Hobby"}
+                    </HoverCard.Dropdown>
+                    <Text>{skill?.name}</Text>
+                  </HoverCard>
+                </Flex>
+              ))}
           </SimpleGrid>
         </React.Fragment>
       ))

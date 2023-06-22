@@ -14,6 +14,7 @@ export const useProfile = () => {
         skills {
           name
           category
+          level
           icon {
             file {
               url
