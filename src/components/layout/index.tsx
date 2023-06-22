@@ -17,7 +17,7 @@ export const Layout = ({ children }: LayoutProps) => {
       theme={theme}
     >
       <Header />
-      <Container size="xl" px={0}>
+      <Container size="xl" pt={50} px={0}>
         <Grid w="100%" m={0}>
           <Grid.Col xs={12} sm={3}>
             <Aside />

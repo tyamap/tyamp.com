@@ -12,7 +12,7 @@ const IndexPage: React.FC<PageProps> = () => {
     <Layout>
       <Title display="none">Overview</Title>
       <Title order={2} id="about" mb="md">About me</Title>
-      <Text mb="sm" sx={{whiteSpace: 'break-spaces'}}>{profile?.description?.description}</Text>
+      <Text mb="sm" sx={{ whiteSpace: 'break-spaces' }}>{profile?.description?.description}</Text>
       <Title order={2} id="about" mb="md">Skills</Title>
       <Text mb="sm">Hover over the icon to check the years of experience</Text>
       {categories?.map((category) => (
@@ -36,7 +36,9 @@ const IndexPage: React.FC<PageProps> = () => {
                       />
                     </HoverCard.Target>
                     <HoverCard.Dropdown p="xs">
-                      {(skill?.level || 0) > 0 ? `${skill?.level}+ years` : "Hobby"}
+                      <Text fw={700} c="indigo">
+                        {(skill?.level || 0) > 0 ? `${skill?.level}+ years` : "Hobby"}
+                      </Text>
                     </HoverCard.Dropdown>
                     <Text>{skill?.name}</Text>
                   </HoverCard>

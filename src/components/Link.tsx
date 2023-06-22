@@ -27,7 +27,7 @@ const style = css`
   &:link,
   &:visited {
     cursor: pointer;
-    color: blue;
+    color: steelblue;
     text-decoration: none;
     &:hover {
       text-decoration: underline;

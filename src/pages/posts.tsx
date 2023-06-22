@@ -31,9 +31,11 @@ const PostsPage = (props: PostsPageProps) => {
               </Link>
             </Card.Section>
             <Text c="dimmed">{formatPubDate(post.pubDate!)}</Text>
-            <Link href={post.link}>
-              {truncate(post.title!, 27)} | {post.platform}
-            </Link>
+            <Text fw={700}>
+              <Link href={post.link}>
+                {truncate(post.title!, 27)} | {post.platform}
+              </Link>
+            </Text>
           </Card>
         ))}
       </SimpleGrid>
