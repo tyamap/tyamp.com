@@ -45,4 +45,7 @@ const PostsPage = (props: PostsPageProps) => {
 
 export default PostsPage;
 
-export const Head: HeadFC = () => <SEO pathname="/posts" title="Blog posts" />
+export const Head: HeadFC = () => <SEO pathname="/posts"
+  title="Blog posts"
+  description="Here are my blog posts, obtained via RSS from each platform. I write about programming, tech, and my life."
+/>

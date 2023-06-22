@@ -10,18 +10,12 @@ const path = require('path')
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `tyamap.com`,
-    description: 'tyamap Homepage',
+    description: 'Welcome to my website! I\'m a full-stack web engineer. I approach freelancing as a side gig alongside my primary job.',
     image: '/icon.jpg',
     siteUrl: `https://www.tyamap.com`,
     social: {
       twitter: `@tyamap03`,
-      github: 'tyamap',
     },
-    profile: {
-      id: 'tyamap',
-      name: 'Tomoya Yamashita',
-      labels: ['web developer'],
-    }
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin

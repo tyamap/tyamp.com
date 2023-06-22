@@ -67,4 +67,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <SEO pathname="/" title="" />
+export const Head: HeadFC = () => <SEO pathname="/" />

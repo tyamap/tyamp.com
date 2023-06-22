@@ -28,7 +28,7 @@ const ProjectsPage = (props: ProjectsPageProps) => {
                   />
                 </Link>
               </Grid.Col>
-              <Grid.Col xs={12} sm={8} p={{sm: "xs", xs: 0}}
+              <Grid.Col xs={12} sm={8} p={{ sm: "xs", xs: 0 }}
                 sx={{ display: 'flex', flexDirection: 'column' }}
               >
                 <Title order={3}>
@@ -65,4 +65,7 @@ const ProjectsPage = (props: ProjectsPageProps) => {
 
 export default ProjectsPage;
 
-export const Head: HeadFC = () => <SEO pathname="/projects" title="Projects" />
+export const Head: HeadFC = () => <SEO pathname="/projects"
+  title="Projects"
+  description="Here are some of my personal projects. Check out the links for more information and feel free to contact me!"
+/>

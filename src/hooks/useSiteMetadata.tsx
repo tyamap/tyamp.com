@@ -11,12 +11,6 @@ export const useSiteMetadata = () => {
           siteUrl
           social {
             twitter
-            github
-          }
-          profile {
-            id
-            name
-            labels
           }
         }
       }
