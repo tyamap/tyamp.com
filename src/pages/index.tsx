@@ -1,4 +1,4 @@
-import { Title, Text, Image, Flex, SimpleGrid, Timeline, HoverCard } from "@mantine/core"
+import { Title, Text, Flex, SimpleGrid, Timeline, HoverCard } from "@mantine/core"
 import type { HeadFC, PageProps } from "gatsby"
 import React from "react"
 import { Layout } from "src/components/layout"
@@ -29,7 +29,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 <Flex direction="column" align="center" key={skill?.name}>
                   <HoverCard offset={-1} closeDelay={500}>
                     <HoverCard.Target>
-                      <Image
+                      <img
                         src={skill?.icon?.file?.url || ""}
                         alt={`${skill?.name} icon`}
                         height={32} width={32}
