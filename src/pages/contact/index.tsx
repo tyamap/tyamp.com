@@ -33,6 +33,9 @@ const ContactPage = (props: ContactPageProps) => {
             <Textarea
               label="Message"
               name="message"
+              autosize
+              minRows={5}
+              maxRows={10}
               withAsterisk
               required
             />
