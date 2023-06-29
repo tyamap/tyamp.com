@@ -5,6 +5,7 @@ type Post = {
   title: string | null
   link: string | null
   pubDate: string | null
+  thumbnail?: string | null
   platform: 'Zenn' | 'Qiita' | 'note'
 }
 
@@ -17,6 +18,9 @@ export const useFeedPosts = () => {
         title
         link
         pubDate
+        enclosure {
+          url
+        }
       }
       totalCount
     }
@@ -26,6 +30,9 @@ export const useFeedPosts = () => {
         title
         link
         pubDate
+        media {
+          thumbnail
+        }
       }
       totalCount
     }
@@ -36,14 +43,16 @@ export const useFeedPosts = () => {
 
   const zennPosts: Post[] = data.allFeedZenn.nodes.map((post) => {
     return {
-      platform: 'Zenn',
       ...post,
+      thumbnail: post.enclosure?.url,
+      platform: 'Zenn',
     }
   })
   const notePosts: Post[] = data.allFeedNote.nodes.map((post) => {
     return {
-      platform: 'note',
       ...post,
+      thumbnail: post.media?.thumbnail,
+      platform: 'note',
     }
   })
 

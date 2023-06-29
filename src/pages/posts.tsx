@@ -1,4 +1,4 @@
-import { Card, Title, Text, SimpleGrid, Image } from "@mantine/core";
+import { Card, Title, Text, SimpleGrid, Image, AspectRatio } from "@mantine/core";
 import { HeadFC } from "gatsby";
 import { Layout } from "src/components/layout";
 import Link from "src/components/Link";
@@ -23,11 +23,12 @@ const PostsPage = (props: PostsPageProps) => {
           <Card key={post.id} p="xs" withBorder>
             <Card.Section >
               <Link href={post.link} label={post.title!}>
-                {/* TODO: サムネイルを取得して表示 */}
-                <Image src={`https://picsum.photos/seed/${post.id}/200/300`}
-                  alt={post.title!}
-                  height={160}
-                />
+                <AspectRatio ratio={1200 / 630}>
+                  <Image
+                    src={post.thumbnail || `https://picsum.photos/seed/${post.id}/400/210`}
+                    alt={post.title!}
+                  />
+                </AspectRatio>
               </Link>
             </Card.Section>
             <Text c="dimmed">{formatPubDate(post.pubDate!)}</Text>

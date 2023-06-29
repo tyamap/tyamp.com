@@ -51,6 +51,11 @@ const config: GatsbyConfig = {
       options: {
         url: `https://zenn.dev/tyamap/feed?include_scraps=1&all=1`,
         name: `Zenn`,
+        parserOption: {
+          customFields: {
+            item: ['enclosure']
+          }
+        }
       },
     },
     {
@@ -58,6 +63,11 @@ const config: GatsbyConfig = {
       options: {
         url: `https://note.com/tyamap/rss`,
         name: `Note`,
+        parserOption: {
+          customFields: {
+            item: ['media:thumbnail']
+          }
+        }
       },
     },
   ]
