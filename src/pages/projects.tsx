@@ -15,7 +15,7 @@ const ProjectsPage = (props: ProjectsPageProps) => {
 
   return (
     <Layout>
-      <Title display="none">Projects</Title>
+      <Title>Projects</Title>
       <Stack>
         {projects?.nodes?.map((project) => (
           <Card key={project?.name} withBorder p={0}>

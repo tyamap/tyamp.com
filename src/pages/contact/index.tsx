@@ -9,7 +9,7 @@ const ContactPage = (props: ContactPageProps) => {
 
   return (
     <Layout>
-      <Title display="none">Contact</Title>
+      <Title>Contact</Title>
       <Container size="sm" >
         <Title order={2} mb="md">Send Message</Title>
         <form action={process.env.GATSBY_FORM_ENDPOINT} method="POST">

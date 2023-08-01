@@ -10,7 +10,7 @@ const IndexPage: React.FC<PageProps> = () => {
   const profile = useProfile()
   return (
     <Layout>
-      <Title display="none">Overview</Title>
+      <Title>Overview</Title>
       <Title order={2} id="about" mb="md">About me</Title>
       <Text mb="sm" sx={{ whiteSpace: 'break-spaces' }}>{profile?.description?.description}</Text>
       <Title order={2} id="about" mb="md">Skills</Title>

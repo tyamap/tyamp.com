@@ -13,7 +13,7 @@ const PostsPage = (props: PostsPageProps) => {
   const zennPosts = useFeedPosts()
   return (
     <Layout>
-      <Title display="none">Posts</Title>
+      <Title>Posts</Title>
       <SimpleGrid
         cols={4}
         spacing="xs"

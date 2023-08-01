@@ -15,7 +15,7 @@ const WorksPage = (props: WorksPageProps) => {
 
   return (
     <Layout>
-      <Title display="none">Client works</Title>
+      <Title>Client works</Title>
       {works?.nodes?.map((work) => (
         <Box
           key={work.name}
