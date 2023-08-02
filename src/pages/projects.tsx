@@ -3,6 +3,7 @@ import { HeadFC } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { Layout } from "src/components/layout";
 import Link from "src/components/Link";
+import PageTitle from "src/components/PageTitle";
 import SEO from "src/components/SEO";
 import { useProjects } from "src/hooks/useProjects";
 import { formatDate, stringToColor } from "src/utils";
@@ -15,7 +16,7 @@ const ProjectsPage = (props: ProjectsPageProps) => {
 
   return (
     <Layout>
-      <Title>Projects</Title>
+      <PageTitle>Projects</PageTitle>
       <Stack>
         {projects?.nodes?.map((project) => (
           <Card key={project?.name} withBorder p={0}>
