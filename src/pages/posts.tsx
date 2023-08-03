@@ -14,7 +14,7 @@ const PostsPage = (props: PostsPageProps) => {
   const zennPosts = useFeedPosts()
   return (
     <Layout>
-      <PageTitle>Posts</PageTitle>
+      <PageTitle>Blog posts</PageTitle>
       <SimpleGrid
         cols={4}
         spacing="xs"
@@ -51,6 +51,6 @@ const PostsPage = (props: PostsPageProps) => {
 export default PostsPage;
 
 export const Head: HeadFC = () => <SEO pathname="/posts"
-  title="Blog posts"
+  title="Blog Posts"
   description="Here are my blog posts, obtained via RSS from each platform. I write about programming, tech, and my life."
 />

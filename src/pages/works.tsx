@@ -57,6 +57,6 @@ const WorksPage = (props: WorksPageProps) => {
 export default WorksPage;
 
 export const Head: HeadFC = () => <SEO pathname="/works"
-  title="Client works"
+  title="Client Works"
   description="Here are some of the client work I have been involved in as a freelancer. Please check out the links and feel free to contact me!"
 />
