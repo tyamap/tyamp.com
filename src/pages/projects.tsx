@@ -16,7 +16,7 @@ const ProjectsPage = (props: ProjectsPageProps) => {
 
   return (
     <Layout>
-      <PageTitle>Projects</PageTitle>
+      <PageTitle>My projects</PageTitle>
       <Stack>
         {projects?.nodes?.map((project) => (
           <Card key={project?.name} withBorder p={0}>
@@ -67,6 +67,6 @@ const ProjectsPage = (props: ProjectsPageProps) => {
 export default ProjectsPage;
 
 export const Head: HeadFC = () => <SEO pathname="/projects"
-  title="Projects"
+  title="My Projects"
   description="Here are some of my personal projects. Check out the links for more information and feel free to contact me!"
 />
