@@ -1,6 +1,7 @@
 import { Title, TextInput, Textarea, Button, Stack, Container } from "@mantine/core";
 import { HeadFC } from "gatsby";
 import { Layout } from "src/components/layout";
+import PageTitle from "src/components/PageTitle";
 import SEO from "src/components/SEO";
 
 interface ContactPageProps { }
@@ -9,7 +10,7 @@ const ContactPage = (props: ContactPageProps) => {
 
   return (
     <Layout>
-      <Title display="none">Contact</Title>
+      <PageTitle>Contact</PageTitle>
       <Container size="sm" >
         <Title order={2} mb="md">Send Message</Title>
         <form action={process.env.GATSBY_FORM_ENDPOINT} method="POST">

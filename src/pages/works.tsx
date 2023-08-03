@@ -3,6 +3,7 @@ import { IconLink, IconLock } from "@tabler/icons-react";
 import { HeadFC } from "gatsby";
 import { Layout } from "src/components/layout";
 import Link from "src/components/Link";
+import PageTitle from "src/components/PageTitle";
 import SEO from "src/components/SEO";
 import { useClientWorks } from "src/hooks/useClientWorks";
 import { formatDate, stringToColor } from "src/utils";
@@ -15,7 +16,7 @@ const WorksPage = (props: WorksPageProps) => {
 
   return (
     <Layout>
-      <Title display="none">Client works</Title>
+      <PageTitle>Client works</PageTitle>
       {works?.nodes?.map((work) => (
         <Box
           key={work.name}
