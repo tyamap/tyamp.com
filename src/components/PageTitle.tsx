@@ -5,7 +5,7 @@ type PageTitleProps = {
   children: ReactNode
 };
 const PageTitle = (props: PageTitleProps) => {
-  return <Title>{props.children}</Title>;
+  return <Title mb="sm">{props.children}</Title>;
 };
 
 export default PageTitle
