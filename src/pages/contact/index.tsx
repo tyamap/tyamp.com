@@ -1,18 +1,36 @@
-import { Title, TextInput, Textarea, Button, Stack, Container } from "@mantine/core";
+import {
+  Title,
+  TextInput,
+  Textarea,
+  Button,
+  Stack,
+  Container,
+  Group,
+} from "@mantine/core";
 import { HeadFC } from "gatsby";
 import { Layout } from "src/components/layout";
 import PageTitle from "src/components/PageTitle";
 import SEO from "src/components/SEO";
 
-interface ContactPageProps { }
+interface ContactPageProps {}
 
 const ContactPage = (props: ContactPageProps) => {
-
   return (
     <Layout>
       <PageTitle>Contact</PageTitle>
-      <Container size="sm" >
-        <Title order={2} mb="md">Send Message</Title>
+      <Container size="sm">
+        <Group position="right">
+          <a href="https://www.buymeacoffee.com/tyamap" target="_blank">
+            <img
+              src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+              alt="Buy Me A Coffee"
+              style={{ height: 40, width: 162.75 }}
+            />
+          </a>
+        </Group>
+        <Title order={2} mb="md">
+          Send Message
+        </Title>
         <form action={process.env.GATSBY_FORM_ENDPOINT} method="POST">
           <Stack>
             <TextInput
@@ -40,8 +58,14 @@ const ContactPage = (props: ContactPageProps) => {
               withAsterisk
               required
             />
-            <div className="g-recaptcha" data-sitekey={process.env.GATSBY_RECAPTCHA_SITEKEY} style={{ marginLeft: 'auto' }} />
-            <Button type="submit" color="cyan">Send</Button>
+            <div
+              className="g-recaptcha"
+              data-sitekey={process.env.GATSBY_RECAPTCHA_SITEKEY}
+              style={{ marginLeft: "auto" }}
+            />
+            <Button type="submit" color="cyan">
+              Send
+            </Button>
           </Stack>
         </form>
       </Container>
@@ -51,9 +75,12 @@ const ContactPage = (props: ContactPageProps) => {
 
 export default ContactPage;
 
-export const Head: HeadFC = () => <SEO pathname="/contact"
-  title="Contact"
-  description="Feel free to reach out to me, and let's embark on this creative journey together!"
->
-  <script src="https://www.google.com/recaptcha/api.js" async defer />
-</SEO>
+export const Head: HeadFC = () => (
+  <SEO
+    pathname="/contact"
+    title="Contact"
+    description="Feel free to reach out to me, and let's embark on this creative journey together!"
+  >
+    <script src="https://www.google.com/recaptcha/api.js" async defer />
+  </SEO>
+);
