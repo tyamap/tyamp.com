@@ -7,12 +7,12 @@ import {
   Container,
   Group,
 } from "@mantine/core";
-import { HeadFC } from "gatsby";
+import { HeadFC, Link } from "gatsby";
 import { Layout } from "src/components/layout";
 import PageTitle from "src/components/PageTitle";
 import SEO from "src/components/SEO";
 
-interface ContactPageProps {}
+interface ContactPageProps { }
 
 const ContactPage = (props: ContactPageProps) => {
   return (
@@ -27,6 +27,9 @@ const ContactPage = (props: ContactPageProps) => {
               style={{ height: 40, width: 162.75 }}
             />
           </a>
+        </Group>
+        <Group position="right">
+          <Link to="/asct" style={{ fontSize: '12px' }}>特定商取引法に基づく表記</Link>
         </Group>
         <Title order={2} mb="md">
           Send Message
