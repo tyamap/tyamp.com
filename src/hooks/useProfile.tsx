@@ -1,6 +1,6 @@
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby";
 
-export const useProfile = () => {
+export const useProfile = (locale: "ja" | "en-US" = "en-US") => {
   const data = useStaticQuery<Queries.Query>(graphql`
     query {
       contentfulProfile(
@@ -41,5 +41,5 @@ export const useProfile = () => {
     }
   `);
 
-  return data.contentfulProfile
-}
+  return data.contentfulProfile;
+};
