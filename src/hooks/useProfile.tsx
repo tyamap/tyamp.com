@@ -2,8 +2,11 @@ import { useStaticQuery, graphql } from "gatsby"
 
 export const useProfile = () => {
   const data = useStaticQuery<Queries.Query>(graphql`
-    query  {
-      contentfulProfile(userId: {eq: "tyamap"}) {
+    query {
+      contentfulProfile(
+        userId: { eq: "tyamap" }
+        node_locale: { eq: "en-US" }
+      ) {
         name
         userId
         label
@@ -36,7 +39,7 @@ export const useProfile = () => {
         }
       }
     }
-  `)
+  `);
 
   return data.contentfulProfile
 }
