@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-export const useProfile = (locale: "ja" | "en-US" = "en-US") => {
+export const useProfile = () => {
   const data = useStaticQuery<Queries.Query>(graphql`
     query {
       contentfulProfile(
@@ -11,19 +11,6 @@ export const useProfile = (locale: "ja" | "en-US" = "en-US") => {
         userId
         label
         histories
-        description {
-          description
-        }
-        skills {
-          name
-          category
-          level
-          icon {
-            file {
-              url
-            }
-          }
-        }
         socials {
           link
           icon {

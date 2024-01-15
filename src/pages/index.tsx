@@ -1,19 +1,18 @@
 import { Title, Text, Flex, SimpleGrid, Timeline, HoverCard } from "@mantine/core"
-import type { HeadFC, PageProps } from "gatsby"
+import { graphql, type HeadFC, type PageProps } from "gatsby"
 import React from "react"
 import { Layout } from "src/components/layout"
 import PageTitle from "src/components/PageTitle"
 import SEO from "src/components/SEO"
-import { useProfile } from "src/hooks/useProfile"
 
 const categories = ["Programming Languages", "Frameworks", "Databases", "Tools", "Clouds", "Others"]
-const IndexPage: React.FC<PageProps> = () => {
-  const profile = useProfile()
+const IndexPage = ({ data }: PageProps<Queries.Query>) => {
+  const profile = data.contentfulProfile;
   return (
     <Layout>
       <PageTitle>Overview</PageTitle>
       <Title order={2} id="about" mb="md">
-        About me
+        About
       </Title>
       <Text mb="sm" sx={{ whiteSpace: "break-spaces" }}>
         {profile?.description?.description}
@@ -76,8 +75,45 @@ const IndexPage: React.FC<PageProps> = () => {
       </Timeline>
     </Layout>
   );
-}
+};
 
 export default IndexPage
 
 export const Head: HeadFC = () => <SEO pathname="/" />
+
+export const query = graphql`
+  {
+    contentfulProfile(userId: { eq: "tyamap" }, node_locale: { eq: "en-US" }) {
+      name
+      userId
+      label
+      histories
+      description {
+        description
+      }
+      skills {
+        name
+        category
+        level
+        icon {
+          file {
+            url
+          }
+        }
+      }
+      socials {
+        link
+        icon {
+          file {
+            url
+          }
+        }
+      }
+      avatar {
+        description
+        title
+        gatsbyImageData
+      }
+    }
+  }
+`;
