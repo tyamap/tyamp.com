@@ -1,13 +1,15 @@
 import { Title, Text, Flex, SimpleGrid, Timeline, HoverCard } from "@mantine/core"
-import { graphql, type HeadFC, type PageProps } from "gatsby"
-import React from "react"
-import { Layout } from "src/components/layout"
-import PageTitle from "src/components/PageTitle"
-import SEO from "src/components/SEO"
+import { graphql, type HeadFC, type PageProps } from "gatsby";
+import React from "react";
+import { Layout } from "src/components/layout";
+import PageTitle from "src/components/PageTitle";
+import SEO from "src/components/SEO";
 
 const categories = ["Programming Languages", "Frameworks", "Databases", "Tools", "Clouds", "Others"]
+
 const IndexPage = ({ data }: PageProps<Queries.Query>) => {
   const profile = data.contentfulProfile;
+
   return (
     <Layout>
       <PageTitle>Overview</PageTitle>

@@ -1,18 +1,14 @@
 import { Card, Title, Text, Flex, Grid, Stack, Badge, Group } from "@mantine/core";
-import { HeadFC } from "gatsby";
+import { graphql, HeadFC, PageProps } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { Layout } from "src/components/layout";
 import Link from "src/components/Link";
 import PageTitle from "src/components/PageTitle";
 import SEO from "src/components/SEO";
-import { useProjects } from "src/hooks/useProjects";
 import { formatDate, stringToColor } from "src/utils";
 
-interface ProjectsPageProps {
-
-}
-const ProjectsPage = (props: ProjectsPageProps) => {
-  const projects = useProjects()
+const ProjectsPage = ({ data }: PageProps<Queries.Query>) => {
+  const projects = data.allContentfulProject;
 
   return (
     <Layout>
@@ -60,7 +56,7 @@ const ProjectsPage = (props: ProjectsPageProps) => {
           </Card>
         ))}
       </Stack>
-    </Layout >
+    </Layout>
   );
 };
 
@@ -70,3 +66,27 @@ export const Head: HeadFC = () => <SEO pathname="/projects"
   title="My Projects"
   description="Here are some of my personal projects. Check out the links for more information and feel free to contact me!"
 />
+
+export const query = graphql`
+  {
+    allContentfulProject(
+      sort: { startDate: DESC }
+      filter: { node_locale: { eq: "en-US" } }
+    ) {
+      totalCount
+      nodes {
+        description {
+          description
+        }
+        name
+        githubLink
+        url
+        startDate
+        tags
+        thumbnail {
+          gatsbyImageData
+        }
+      }
+    }
+  }
+`;

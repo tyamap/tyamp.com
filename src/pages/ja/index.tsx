@@ -8,6 +8,7 @@ import SEO from "src/components/SEO"
 const categories = ["Programming Languages", "Frameworks", "Databases", "Tools", "Clouds", "Others"]
 const IndexPage = ({ data }: PageProps<Queries.Query>) => {
   const profile = data.contentfulProfile;
+
   return (
     <Layout>
       <PageTitle>Overview</PageTitle>
