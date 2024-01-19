@@ -42,7 +42,7 @@ const Header = (props: HeaderProps) => {
             /
           </Text>
           <Link
-            to="/ja"
+            to={`/ja${location.pathname}`}
             aria-label="Japanaese"
             style={{ textDecoration: "none" }}
           >

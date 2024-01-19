@@ -35,7 +35,11 @@ const Header = (props: HeaderProps) => {
       </Box>
       <Box display="flex" sx={{ justifyContent: "space-between" }}>
         <Box mr={10} sx={{ fontSize: 12, lineHeight: 2 }}>
-          <Link to="/" aria-label="English" style={{ textDecoration: "none" }}>
+          <Link
+            to={`${location.pathname.replace('/ja', '')}`}
+            aria-label="English"
+            style={{ textDecoration: "none" }}
+          >
             <Text c="steelblue" fw={700} component="span">
               EN
             </Text>
