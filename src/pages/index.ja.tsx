@@ -80,7 +80,7 @@ const IndexPage = ({ data }: PageProps<Queries.Query>) => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <SEO pathname="/" />
+export const Head: HeadFC = () => <SEO pathname="/" locale="ja" />;
 
 
 export const query = graphql`

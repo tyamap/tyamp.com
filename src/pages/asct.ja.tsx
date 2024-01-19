@@ -27,7 +27,7 @@ const ASCTPage: React.FC<PageProps> = () => {
 
 export default ASCTPage
 
-export const Head: HeadFC = () => <SEO title="特定商取引法に基づく表記" />
+export const Head: HeadFC = () => <SEO title="特定商取引法に基づく表記" locale="ja" />
 
 const elements = [
   { name: '事業者名', desc: '山下智矢' },

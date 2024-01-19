@@ -62,10 +62,14 @@ const ProjectsPage = ({ data }: PageProps<Queries.Query>) => {
 
 export default ProjectsPage;
 
-export const Head: HeadFC = () => <SEO pathname="/projects"
-  title="My Projects"
-  description="Here are some of my personal projects. Check out the links for more information and feel free to contact me!"
-/>
+export const Head: HeadFC = () => (
+  <SEO
+    pathname="/projects"
+    title="My Projects"
+    description="Here are some of my personal projects. Check out the links for more information and feel free to contact me!"
+    locale="ja"
+  />
+);
 
 export const query = graphql`
   {

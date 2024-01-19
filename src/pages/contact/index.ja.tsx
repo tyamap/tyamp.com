@@ -83,6 +83,7 @@ export const Head: HeadFC = () => (
     pathname="/contact"
     title="Contact"
     description="Feel free to reach out to me, and let's embark on this creative journey together!"
+    locale="ja"
   >
     <script src="https://www.google.com/recaptcha/api.js" async defer />
   </SEO>
