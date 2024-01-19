@@ -27,7 +27,7 @@ const Header = (props: HeaderProps) => {
           "-webkit-text-fill-color": "transparent",
         })}
       >
-        <Link to="/" aria-label="go to home" style={{ textDecoration: "none" }}>
+        <Link to="/ja" aria-label="go to home" style={{ textDecoration: "none" }}>
           <Text c="teal" fw={700} component="span">
             {title}
           </Text>
@@ -51,7 +51,7 @@ const Header = (props: HeaderProps) => {
             JA
           </Text>
         </Box>
-        <Link to="/contact" aria-label="go to contact page">
+        <Link to="/ja/contact" aria-label="go to contact page">
           <IconMail color="steelblue" />
         </Link>
       </Box>
