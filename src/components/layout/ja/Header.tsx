@@ -29,7 +29,7 @@ const Header = (props: HeaderProps) => {
           "-webkit-text-fill-color": "transparent",
         })}
       >
-        <Link to="/" aria-label="go to home" style={{ textDecoration: "none" }}>
+        <Link to="/ja" aria-label="go to home" style={{ textDecoration: "none" }}>
           <Text c="teal" fw={700} component="span">
             {title}
           </Text>
@@ -37,23 +37,23 @@ const Header = (props: HeaderProps) => {
       </Box>
       <Box display="flex" sx={{ justifyContent: "space-between" }}>
         <Box mr={10} sx={{ fontSize: 12, lineHeight: 2 }}>
-          <Text c="steelblue" component="span">
-            EN
-          </Text>
-          <Text c="steelblue" mx={3} component="span">
-            /
-          </Text>
           <Link
-            to={`/ja${location.pathname}`}
-            aria-label="Japanaese"
+            to={`${location.pathname.replace('/ja', '')}`}
+            aria-label="English"
             style={{ textDecoration: "none" }}
           >
             <Text c="steelblue" fw={700} component="span">
-              JA
+              EN
             </Text>
           </Link>
+          <Text c="steelblue" mx={3} component="span">
+            /
+          </Text>
+          <Text c="steelblue" component="span">
+            JA
+          </Text>
         </Box>
-        <Link to="/contact" aria-label="go to contact page">
+        <Link to="/ja/contact" aria-label="go to contact page">
           <IconMail color="steelblue" />
         </Link>
       </Box>

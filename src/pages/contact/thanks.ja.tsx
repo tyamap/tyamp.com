@@ -1,7 +1,7 @@
 import { Title, Text, Box } from "@mantine/core";
 import { IconCircleCheck } from "@tabler/icons-react";
 import { HeadFC, Link } from "gatsby";
-import { Layout } from "src/components/layout/en";
+import { Layout } from "src/components/layout/ja";
 import PageTitle from "src/components/PageTitle";
 import SEO from "src/components/SEO";
 
@@ -29,7 +29,11 @@ const Thanks = (props: ThanksProps) => {
 
 export default Thanks;
 
-export const Head: HeadFC = () => <SEO pathname="/thanks"
-  title="Thank you!"
-  description="Your message has been sent. I will get back to you as soon as possible!"
-/>
+export const Head: HeadFC = () => (
+  <SEO
+    pathname="/thanks"
+    title="Thank you!"
+    description="Your message has been sent. I will get back to you as soon as possible!"
+    locale="ja"
+  />
+);

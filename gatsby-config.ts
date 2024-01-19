@@ -70,6 +70,13 @@ const config: GatsbyConfig = {
         }
       },
     },
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyDefault: 'en',
+        useLangKeyLayout: true
+      }
+    }
   ]
 };
 

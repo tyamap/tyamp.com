@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby";
 
 export const useProfile = () => {
   const data = useStaticQuery<Queries.Query>(graphql`
@@ -11,19 +11,6 @@ export const useProfile = () => {
         userId
         label
         histories
-        description {
-          description
-        }
-        skills {
-          name
-          category
-          level
-          icon {
-            file {
-              url
-            }
-          }
-        }
         socials {
           link
           icon {
@@ -41,5 +28,5 @@ export const useProfile = () => {
     }
   `);
 
-  return data.contentfulProfile
-}
+  return data.contentfulProfile;
+};

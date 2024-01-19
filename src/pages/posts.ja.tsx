@@ -1,6 +1,6 @@
 import { Card, Title, Text, SimpleGrid, Image, AspectRatio } from "@mantine/core";
 import { HeadFC } from "gatsby";
-import { Layout } from "src/components/layout/en";
+import { Layout } from "src/components/layout/ja";
 import Link from "src/components/Link";
 import PageTitle from "src/components/PageTitle";
 import SEO from "src/components/SEO";
@@ -50,7 +50,11 @@ const PostsPage = (props: PostsPageProps) => {
 
 export default PostsPage;
 
-export const Head: HeadFC = () => <SEO pathname="/posts"
-  title="Blog Posts"
-  description="Here are my blog posts, obtained via RSS from each platform. I write about programming, tech, and my life."
-/>
+export const Head: HeadFC = () => (
+  <SEO
+    pathname="/posts"
+    title="Blog Posts"
+    description="Here are my blog posts, obtained via RSS from each platform. I write about programming, tech, and my life."
+    locale="ja"
+  />
+);

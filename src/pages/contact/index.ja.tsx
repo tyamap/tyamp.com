@@ -8,7 +8,7 @@ import {
   Group,
 } from "@mantine/core";
 import { HeadFC, Link } from "gatsby";
-import { Layout } from "src/components/layout/en";
+import { Layout } from "src/components/layout/ja";
 import PageTitle from "src/components/PageTitle";
 import SEO from "src/components/SEO";
 
@@ -83,6 +83,7 @@ export const Head: HeadFC = () => (
     pathname="/contact"
     title="Contact"
     description="Feel free to reach out to me, and let's embark on this creative journey together!"
+    locale="ja"
   >
     <script src="https://www.google.com/recaptcha/api.js" async defer />
   </SEO>

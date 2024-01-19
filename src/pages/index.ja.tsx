@@ -1,12 +1,11 @@
 import { Title, Text, Flex, SimpleGrid, Timeline, HoverCard } from "@mantine/core"
-import { graphql, type HeadFC, type PageProps } from "gatsby";
-import React from "react";
-import { Layout } from "src/components/layout/en";
-import PageTitle from "src/components/PageTitle";
-import SEO from "src/components/SEO";
+import { graphql, type HeadFC, type PageProps } from "gatsby"
+import React from "react"
+import { Layout } from "src/components/layout/ja"
+import PageTitle from "src/components/PageTitle"
+import SEO from "src/components/SEO"
 
 const categories = ["Programming Languages", "Frameworks", "Databases", "Tools", "Clouds", "Others"]
-
 const IndexPage = ({ data }: PageProps<Queries.Query>) => {
   const profile = data.contentfulProfile;
 
@@ -22,7 +21,7 @@ const IndexPage = ({ data }: PageProps<Queries.Query>) => {
       <Title order={2} id="about" mb="md">
         Skills
       </Title>
-      <Text mb="sm">Hover over the icon to check the years of experience</Text>
+      <Text mb="sm">アイコンにマウスオーバーして経験年数を参照できます。</Text>
       {categories?.map((category) => (
         <React.Fragment key={category}>
           <Title key={category} order={3}>
@@ -81,11 +80,12 @@ const IndexPage = ({ data }: PageProps<Queries.Query>) => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <SEO pathname="/" />
+export const Head: HeadFC = () => <SEO pathname="/" locale="ja" />;
+
 
 export const query = graphql`
   {
-    contentfulProfile(userId: { eq: "tyamap" }, node_locale: { eq: "en-US" }) {
+    contentfulProfile(userId: { eq: "tyamap" }, node_locale: { eq: "ja" }) {
       name
       userId
       label

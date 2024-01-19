@@ -1,7 +1,7 @@
 import { Badge, Group, Title, Text, Box, Stack } from "@mantine/core";
 import { IconLink, IconLock } from "@tabler/icons-react";
 import { graphql, HeadFC, PageProps } from "gatsby";
-import { Layout } from "src/components/layout/en";
+import { Layout } from "src/components/layout/ja";
 import Link from "src/components/Link";
 import PageTitle from "src/components/PageTitle";
 import SEO from "src/components/SEO";
@@ -52,16 +52,20 @@ const WorksPage = ({ data }: PageProps<Queries.Query>) => {
 
 export default WorksPage;
 
-export const Head: HeadFC = () => <SEO pathname="/works"
-  title="Client Works"
-  description="Here are some of the client work I have been involved in as a freelancer. Please check out the links and feel free to contact me!"
-/>
+export const Head: HeadFC = () => (
+  <SEO
+    pathname="/works"
+    title="Client Works"
+    description="Here are some of the client work I have been involved in as a freelancer. Please check out the links and feel free to contact me!"
+    locale="ja"
+  />
+);
 
 export const query = graphql`
   {
     allContentfulClientWork(
       sort: { startDate: DESC }
-      filter: { node_locale: { eq: "en-US" } }
+      filter: { node_locale: { eq: "ja" } }
     ) {
       totalCount
       nodes {

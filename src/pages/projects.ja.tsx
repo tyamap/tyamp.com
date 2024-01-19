@@ -1,7 +1,7 @@
 import { Card, Title, Text, Flex, Grid, Stack, Badge, Group } from "@mantine/core";
 import { graphql, HeadFC, PageProps } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
-import { Layout } from "src/components/layout/en";
+import { Layout } from "src/components/layout/ja";
 import Link from "src/components/Link";
 import PageTitle from "src/components/PageTitle";
 import SEO from "src/components/SEO";
@@ -62,16 +62,20 @@ const ProjectsPage = ({ data }: PageProps<Queries.Query>) => {
 
 export default ProjectsPage;
 
-export const Head: HeadFC = () => <SEO pathname="/projects"
-  title="My Projects"
-  description="Here are some of my personal projects. Check out the links for more information and feel free to contact me!"
-/>
+export const Head: HeadFC = () => (
+  <SEO
+    pathname="/projects"
+    title="My Projects"
+    description="Here are some of my personal projects. Check out the links for more information and feel free to contact me!"
+    locale="ja"
+  />
+);
 
 export const query = graphql`
   {
     allContentfulProject(
       sort: { startDate: DESC }
-      filter: { node_locale: { eq: "en-US" } }
+      filter: { node_locale: { eq: "ja" } }
     ) {
       totalCount
       nodes {
