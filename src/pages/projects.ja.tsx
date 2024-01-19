@@ -1,7 +1,7 @@
 import { Card, Title, Text, Flex, Grid, Stack, Badge, Group } from "@mantine/core";
 import { graphql, HeadFC, PageProps } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
-import { Layout } from "src/components/layout";
+import { Layout } from "src/components/layout/ja";
 import Link from "src/components/Link";
 import PageTitle from "src/components/PageTitle";
 import SEO from "src/components/SEO";

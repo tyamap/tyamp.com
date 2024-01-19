@@ -35,21 +35,17 @@ const Header = (props: HeaderProps) => {
       </Box>
       <Box display="flex" sx={{ justifyContent: "space-between" }}>
         <Box mr={6} sx={{ fontSize: 12, lineHeight: 2 }}>
-          <Text c="steelblue" fw={700} component="span">
-            EN
-          </Text>
+          <Link to="/" aria-label="English" style={{ textDecoration: "none" }}>
+            <Text c="steelblue" fw={700} component="span">
+              EN
+            </Text>
+          </Link>
           <Text c="steelblue" mx={3} component="span">
             /
           </Text>
-          <Link
-            to="/ja"
-            aria-label="Japanaese"
-            style={{ textDecoration: "none" }}
-          >
-            <Text c="steelblue" fw={700} component="span">
-              JA
-            </Text>
-          </Link>
+          <Text c="steelblue" fw={700} component="span">
+            JA
+          </Text>
         </Box>
         <Link to="/contact" aria-label="go to contact page">
           <IconMail color="steelblue" />

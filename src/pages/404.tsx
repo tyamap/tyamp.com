@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link, HeadFC, PageProps } from "gatsby"
 import SEO from "src/components/SEO"
 import PageTitle from "src/components/PageTitle"
-import { Layout } from "src/components/layout"
+import { Layout } from "src/components/layout/en"
 import { Button, Text } from "@mantine/core"
 
 const NotFoundPage: React.FC<PageProps> = () => {

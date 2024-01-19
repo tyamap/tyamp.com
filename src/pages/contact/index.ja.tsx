@@ -8,7 +8,7 @@ import {
   Group,
 } from "@mantine/core";
 import { HeadFC, Link } from "gatsby";
-import { Layout } from "src/components/layout";
+import { Layout } from "src/components/layout/ja";
 import PageTitle from "src/components/PageTitle";
 import SEO from "src/components/SEO";
 

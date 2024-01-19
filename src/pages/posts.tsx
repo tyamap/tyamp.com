@@ -1,6 +1,6 @@
 import { Card, Title, Text, SimpleGrid, Image, AspectRatio } from "@mantine/core";
 import { HeadFC } from "gatsby";
-import { Layout } from "src/components/layout";
+import { Layout } from "src/components/layout/en";
 import Link from "src/components/Link";
 import PageTitle from "src/components/PageTitle";
 import SEO from "src/components/SEO";

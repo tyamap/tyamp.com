@@ -1,7 +1,7 @@
 import { Title, Text, Flex, SimpleGrid, Timeline, HoverCard } from "@mantine/core"
 import { graphql, type HeadFC, type PageProps } from "gatsby";
 import React from "react";
-import { Layout } from "src/components/layout";
+import { Layout } from "src/components/layout/en";
 import PageTitle from "src/components/PageTitle";
 import SEO from "src/components/SEO";
 
