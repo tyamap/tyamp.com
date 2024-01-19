@@ -34,7 +34,7 @@ const Header = (props: HeaderProps) => {
         </Link>
       </Box>
       <Box display="flex" sx={{ justifyContent: "space-between" }}>
-        <Box mr={6} sx={{ fontSize: 12, lineHeight: 2 }}>
+        <Box mr={10} sx={{ fontSize: 12, lineHeight: 2 }}>
           <Link to="/" aria-label="English" style={{ textDecoration: "none" }}>
             <Text c="steelblue" fw={700} component="span">
               EN
@@ -43,7 +43,7 @@ const Header = (props: HeaderProps) => {
           <Text c="steelblue" mx={3} component="span">
             /
           </Text>
-          <Text c="steelblue" fw={700} component="span">
+          <Text c="steelblue" component="span">
             JA
           </Text>
         </Box>

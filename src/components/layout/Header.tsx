@@ -34,8 +34,8 @@ const Header = (props: HeaderProps) => {
         </Link>
       </Box>
       <Box display="flex" sx={{ justifyContent: "space-between" }}>
-        <Box mr={6} sx={{ fontSize: 12, lineHeight: 2 }}>
-          <Text c="steelblue" fw={700} component="span">
+        <Box mr={10} sx={{ fontSize: 12, lineHeight: 2 }}>
+          <Text c="steelblue" component="span">
             EN
           </Text>
           <Text c="steelblue" mx={3} component="span">
