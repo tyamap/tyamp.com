@@ -1,4 +1,5 @@
 import { Box, Header as MantineHeader, Text } from "@mantine/core";
+import { useLocation } from "@reach/router";
 import { IconMail } from "@tabler/icons-react";
 import { Link } from "gatsby";
 import { useSiteMetadata } from "src/hooks/useSiteMetadata";
@@ -6,6 +7,7 @@ import { useSiteMetadata } from "src/hooks/useSiteMetadata";
 interface HeaderProps {}
 const Header = (props: HeaderProps) => {
   const { title } = useSiteMetadata();
+  const location = useLocation();
 
   return (
     <MantineHeader
