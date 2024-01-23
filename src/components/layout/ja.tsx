@@ -14,7 +14,7 @@ export const Layout = ({ children }: LayoutProps) => {
     <MantineProvider
       withGlobalStyles
       withNormalizeCSS
-      theme={theme}
+      theme={{ colorScheme: "dark" }}
     >
       <Header />
       <Container size="xl" pt={50} px={0}>
@@ -24,12 +24,10 @@ export const Layout = ({ children }: LayoutProps) => {
           </Grid.Col>
           <Grid.Col span="auto">
             <Tabs />
-            <Main>
-              {children}
-            </Main>
+            <Main>{children}</Main>
           </Grid.Col>
         </Grid>
       </Container>
-    </MantineProvider >
-  )
+    </MantineProvider>
+  );
 }
