@@ -10,13 +10,18 @@ import Header from "src/components/layout/Header";
 import Aside from "src/components/layout/Aside";
 import Main from "src/components/layout/Main";
 import Tabs from "src/components/layout/Tabs";
-import { useState } from "react";
+import { useColorScheme, useLocalStorage } from "@mantine/hooks";
 
 type LayoutProps = {
   children: React.ReactNode;
 };
 export const Layout = ({ children }: LayoutProps) => {
-  const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
+  const preferredColorScheme = useColorScheme();
+  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
+    key: "color-scheme",
+    defaultValue: preferredColorScheme,
+    getInitialValueInEffect: false,
+  });
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
 

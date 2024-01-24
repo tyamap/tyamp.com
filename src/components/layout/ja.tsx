@@ -1,18 +1,29 @@
-import { ColorScheme, ColorSchemeProvider, Container, Grid } from "@mantine/core";
+import {
+  ColorScheme,
+  ColorSchemeProvider,
+  Container,
+  Grid,
+} from "@mantine/core";
 import { MantineProvider } from "@mantine/core";
 import { theme } from "src/theme";
 import Header from "src/components/layout/ja/Header";
 import Aside from "src/components/layout/ja/Aside";
 import Main from "src/components/layout/ja/Main";
 import Tabs from "src/components/layout/ja/Tabs";
-import { useState } from "react";
+import { useColorScheme, useLocalStorage } from "@mantine/hooks";
 
 type LayoutProps = {
   children: React.ReactNode;
 };
 export const Layout = ({ children }: LayoutProps) => {
-  const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
-  const toggleColorScheme = (value?: ColorScheme) => setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
+  const preferredColorScheme = useColorScheme();
+  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
+    key: "color-scheme",
+    defaultValue: preferredColorScheme,
+    getInitialValueInEffect: false,
+  });
+  const toggleColorScheme = (value?: ColorScheme) =>
+    setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
 
   return (
     <ColorSchemeProvider
