@@ -1,6 +1,12 @@
-import { Box, Header as MantineHeader, Text } from "@mantine/core";
+import {
+  ActionIcon,
+  Box,
+  Header as MantineHeader,
+  Text,
+  useMantineColorScheme,
+} from "@mantine/core";
 import { useLocation } from "@reach/router";
-import { IconMail } from "@tabler/icons-react";
+import { IconMail, IconMoonStars, IconSun } from "@tabler/icons-react";
 import { Link } from "gatsby";
 import { useSiteMetadata } from "src/hooks/useSiteMetadata";
 
@@ -8,6 +14,8 @@ interface HeaderProps {}
 const Header = (props: HeaderProps) => {
   const { title } = useSiteMetadata();
   const location = useLocation();
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const dark = colorScheme === "dark";
 
   return (
     <MantineHeader
@@ -29,33 +37,45 @@ const Header = (props: HeaderProps) => {
           "-webkit-text-fill-color": "transparent",
         })}
       >
-        <Link to="/ja" aria-label="go to home" style={{ textDecoration: "none" }}>
+        <Link
+          to="/ja"
+          aria-label="go to home"
+          style={{ textDecoration: "none" }}
+        >
           <Text c="teal" fw={700} component="span">
             {title}
           </Text>
         </Link>
       </Box>
-      <Box display="flex" sx={{ justifyContent: "space-between" }}>
-        <Box mr={10} sx={{ fontSize: 12, lineHeight: 2 }}>
-          <Link
-            to={`${location.pathname.replace('/ja', '')}`}
-            aria-label="English"
-            style={{ textDecoration: "none" }}
-          >
-            <Text c="steelblue" fw={700} component="span">
-              EN
-            </Text>
-          </Link>
-          <Text c="steelblue" mx={3} component="span">
-            /
+      <Box display="flex" sx={{ justifyContent: "space-between", gap: 6 }}>
+        <ActionIcon
+          variant="outline"
+          color="steelblue"
+          title="Toggle language to English"
+          component={Link}
+          to={location.pathname.replace("/ja", "")}
+        >
+          <Text fw={500} component="span">
+            EN
           </Text>
-          <Text c="steelblue" component="span">
-            JA
-          </Text>
-        </Box>
-        <Link to="/ja/contact" aria-label="go to contact page">
-          <IconMail color="steelblue" />
-        </Link>
+        </ActionIcon>
+        <ActionIcon
+          variant="outline"
+          color="steelblue"
+          onClick={() => toggleColorScheme()}
+          title="Toggle color scheme"
+        >
+          {dark ? <IconSun size="1.1rem" /> : <IconMoonStars size="1.1rem" />}
+        </ActionIcon>
+        <ActionIcon
+          variant="outline"
+          color="steelblue"
+          title="Go to contact page"
+          component={Link}
+          to="/ja/contact"
+        >
+          <IconMail size="1.1rem" />
+        </ActionIcon>
       </Box>
     </MantineHeader>
   );

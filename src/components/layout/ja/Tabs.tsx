@@ -36,7 +36,7 @@ const Tabs = (props: TabsProps) => {
         // The first tab element is treated as the root page.
         value={location.pathname === '/ja/'
           ? rootTab.value
-          : location.pathname.replaceAll('/ja/', '')
+          : location.pathname.split('/')[2]
         }
         onTabChange={(value) => {
           if (value === rootTab.value) {
