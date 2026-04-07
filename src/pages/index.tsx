@@ -7,6 +7,13 @@ import SEO from "src/components/SEO";
 
 const categories = ["Programming Languages", "Frameworks", "Databases", "Tools", "Clouds", "Others"]
 
+const currentYear = new Date().getFullYear();
+
+const skillYears = (skill: { startYear?: number | null; isHobby?: boolean | null }) => {
+  if (skill.isHobby || !skill.startYear) return null;
+  return currentYear - skill.startYear;
+};
+
 const IndexPage = ({ data }: PageProps<Queries.Query>) => {
   const profile = data.contentfulProfile;
 
@@ -35,29 +42,37 @@ const IndexPage = ({ data }: PageProps<Queries.Query>) => {
           >
             {profile?.skills
               ?.filter((skill) => skill?.category === category)
-              .sort((a, b) => (b?.level || 0) - (a?.level || 0))
-              .map((skill) => (
-                <Flex direction="column" align="center" key={skill?.name}>
-                  <HoverCard offset={-1} closeDelay={500}>
-                    <HoverCard.Target>
-                      <img
-                        src={skill?.icon?.file?.url || ""}
-                        alt={`${skill?.name} icon`}
-                        height={32}
-                        width={32}
-                      />
-                    </HoverCard.Target>
-                    <HoverCard.Dropdown p="xs">
-                      <Text fw={700} c="indigo">
-                        {(skill?.level || 0) > 0
-                          ? `${skill?.level}+ years`
-                          : "Hobby"}
-                      </Text>
-                    </HoverCard.Dropdown>
-                    <Text>{skill?.name}</Text>
-                  </HoverCard>
-                </Flex>
-              ))}
+              .sort((a, b) => {
+                const aYears = skillYears(a ?? {});
+                const bYears = skillYears(b ?? {});
+                if (aYears === null && bYears === null) return 0;
+                if (aYears === null) return 1;
+                if (bYears === null) return -1;
+                return bYears - aYears;
+              })
+              .map((skill) => {
+                const years = skillYears(skill ?? {});
+                return (
+                  <Flex direction="column" align="center" key={skill?.name}>
+                    <HoverCard offset={-1} closeDelay={500}>
+                      <HoverCard.Target>
+                        <img
+                          src={skill?.icon?.file?.url || ""}
+                          alt={`${skill?.name} icon`}
+                          height={32}
+                          width={32}
+                        />
+                      </HoverCard.Target>
+                      <HoverCard.Dropdown p="xs">
+                        <Text fw={700} c="indigo">
+                          {years !== null ? `${years}+ years` : "Hobby"}
+                        </Text>
+                      </HoverCard.Dropdown>
+                      <Text>{skill?.name}</Text>
+                    </HoverCard>
+                  </Flex>
+                );
+              })}
           </SimpleGrid>
         </React.Fragment>
       ))}
@@ -96,7 +111,8 @@ export const query = graphql`
       skills {
         name
         category
-        level
+        startYear
+        isHobby
         icon {
           file {
             url
