@@ -1,13 +1,6 @@
 import * as React from "react"
 import { HeadFC } from "gatsby"
-import {
-  Anchor,
-  Divider,
-  List,
-  Stack,
-  Text,
-  Title,
-} from "@mantine/core"
+import { Anchor, List, Stack, Text, Title } from "@mantine/core"
 import { LegalBundleNav } from "src/components/LegalBundleNav"
 import { StandaloneLayout } from "src/components/layout/StandaloneLayout"
 import PageTitle from "src/components/PageTitle"
@@ -88,20 +81,30 @@ const TermsPage: React.FC = () => {
               </List.Item>
               <List.Item>
                 <Anchor
-                  href="https://firebase.google.com/terms/crashlytics"
+                  href="https://firebase.google.com/terms"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Firebase Crashlytics
+                  Firebase (Authentication, Crashlytics, Cloud Messaging, Remote
+                  Config, Firestore, and related Firebase services)
                 </Anchor>
               </List.Item>
               <List.Item>
                 <Anchor
-                  href="https://www.revenuecat.com/terms"
+                  href="https://policies.google.com/terms"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  RevenueCat
+                  Google Sign-In
+                </Anchor>
+              </List.Item>
+              <List.Item>
+                <Anchor
+                  href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Sign in with Apple
                 </Anchor>
               </List.Item>
             </List>
@@ -184,10 +187,8 @@ const TermsPage: React.FC = () => {
             </Title>
             <Text component="p" size="sm">
               If you have any questions or suggestions about the Terms and
-              Conditions, please do not hesitate to contact the Service Provider
-              at{" "}
-              <Anchor href="mailto:tyamap03@gmail.com">tyamap03@gmail.com</Anchor>
-              .
+              Conditions, please contact the Service Provider through the{" "}
+              <Anchor href="/contact">contact form</Anchor>.
             </Text>
           </section>
       </Stack>

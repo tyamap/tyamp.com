@@ -73,20 +73,30 @@ const TermsJaPage: React.FC = () => {
             </List.Item>
             <List.Item>
               <Anchor
-                href="https://firebase.google.com/terms/crashlytics"
+                href="https://firebase.google.com/terms"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Firebase Crashlytics
+                Firebase（Authentication、Crashlytics、Cloud Messaging、Remote
+                Config、Firestore など関連する Firebase サービス）
               </Anchor>
             </List.Item>
             <List.Item>
               <Anchor
-                href="https://www.revenuecat.com/terms"
+                href="https://policies.google.com/terms?hl=ja"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                RevenueCat
+                Google サインイン
+              </Anchor>
+            </List.Item>
+            <List.Item>
+              <Anchor
+                href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Sign in with Apple
               </Anchor>
             </List.Item>
           </List>
@@ -144,8 +154,8 @@ const TermsJaPage: React.FC = () => {
           </Title>
           <Text component="p" size="sm">
             本利用規約に関するご質問やご提案がある場合は、
-            <Anchor href="mailto:tyamap03@gmail.com">tyamap03@gmail.com</Anchor>
-            までご連絡ください。
+            <Anchor href="/ja/contact">お問い合わせフォーム</Anchor>
+            からご連絡ください。
           </Text>
         </section>
       </Stack>

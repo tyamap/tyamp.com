@@ -1,13 +1,6 @@
 import * as React from "react"
 import { HeadFC } from "gatsby"
-import {
-  Anchor,
-  Divider,
-  List,
-  Stack,
-  Text,
-  Title,
-} from "@mantine/core"
+import { Anchor, List, Stack, Text, Title } from "@mantine/core"
 import { LegalBundleNav } from "src/components/LegalBundleNav"
 import { StandaloneLayout } from "src/components/layout/StandaloneLayout"
 import PageTitle from "src/components/PageTitle"
@@ -49,6 +42,27 @@ const PrivacyPolicyPage: React.FC = () => {
               <List.Item>
                 The operating system you use on your mobile device
               </List.Item>
+              <List.Item>
+                Account identifiers and profile information you provide when you
+                sign in, such as email address and display name
+              </List.Item>
+              <List.Item>
+                When you sign in with Google or Apple, identifiers and profile
+                information made available by those sign-in methods, as permitted
+                by your account settings
+              </List.Item>
+              <List.Item>
+                Device tokens used to deliver push notifications (Firebase
+                Cloud Messaging)
+              </List.Item>
+              <List.Item>
+                Crash logs and diagnostic data such as stack traces (Firebase
+                crash reporting)
+              </List.Item>
+              <List.Item>
+                The advertising identifier (IDFA on iOS) when you grant access,
+                as described below under App Tracking Transparency
+              </List.Item>
             </List>
             <Text component="p" size="sm" mt="sm">
               The Application does not gather precise information about the
@@ -57,6 +71,20 @@ const PrivacyPolicyPage: React.FC = () => {
             <Text component="p" size="sm" mt="sm">
               The Application does not use Artificial Intelligence (AI)
               technologies to process your data or provide features.
+            </Text>
+            <Text component="p" size="sm" mt="sm">
+              To support ads and measurement, the Application may request access
+              to the advertising identifier (IDFA) through Apple&apos;s App
+              Tracking Transparency (ATT) framework on supported devices. You can
+              allow or deny this request in the system dialog. If you deny
+              tracking, core features of the Application remain available;
+              however, ads may be less personalized.
+            </Text>
+            <Text component="p" size="sm" mt="sm">
+              Cloud Firestore may store a local cache of your data on your device
+              when offline persistence is enabled, so that the Application can
+              work when the network is unavailable. This cache is subject to
+              your device&apos;s security and your account settings.
             </Text>
             <Text component="p" size="sm" mt="sm">
               The Service Provider may use the information you provided to
@@ -77,11 +105,13 @@ const PrivacyPolicyPage: React.FC = () => {
               Third Party Access
             </Title>
             <Text component="p" size="sm" mb="sm">
-              Only aggregated, anonymized data is periodically transmitted to
-              external services to aid the Service Provider in improving the
-              Application and their service. The Service Provider may share
-              your information with third parties in the ways that are
-              described in this privacy statement.
+              The Application uses third-party services that process data as
+              described in this privacy statement, including for authentication,
+              analytics, crash reporting, ads, push notifications, and remote
+              configuration. Some providers may receive data that identifies your
+              account or device where necessary to provide those features. The
+              Service Provider may share your information with third parties in
+              the ways that are described in this privacy statement.
             </Text>
             <Text component="p" size="sm" mb="sm">
               Please note that the Application utilizes third-party services that
@@ -110,20 +140,30 @@ const PrivacyPolicyPage: React.FC = () => {
               </List.Item>
               <List.Item>
                 <Anchor
-                  href="https://firebase.google.com/support/privacy/"
+                  href="https://firebase.google.com/support/privacy"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Firebase Crashlytics
+                  Firebase Authentication, Crashlytics, Cloud Messaging, Remote
+                  Config, and Cloud Firestore
                 </Anchor>
               </List.Item>
               <List.Item>
                 <Anchor
-                  href="https://www.revenuecat.com/privacy"
+                  href="https://policies.google.com/privacy"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  RevenueCat
+                  Google Sign-In
+                </Anchor>
+              </List.Item>
+              <List.Item>
+                <Anchor
+                  href="https://www.apple.com/legal/privacy/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Sign in with Apple
                 </Anchor>
               </List.Item>
             </List>
@@ -158,7 +198,10 @@ const PrivacyPolicyPage: React.FC = () => {
               You can stop all collection of information by the Application
               easily by uninstalling it. You may use the standard uninstall
               processes as may be available as part of your mobile device or via
-              the mobile application marketplace or network.
+              the mobile application marketplace or network. Where the system
+              offers an App Tracking Transparency choice, you can also change
+              your tracking preference in device settings after the initial
+              prompt.
             </Text>
           </section>
 
@@ -168,11 +211,13 @@ const PrivacyPolicyPage: React.FC = () => {
             </Title>
             <Text component="p" size="sm">
               The Service Provider will retain User Provided data for as long as
-              you use the Application and for a reasonable time thereafter. If
-              you&apos;d like them to delete User Provided Data that you have
-              provided via the Application, please contact them at{" "}
-              <Anchor href="mailto:tyamap03@gmail.com">tyamap03@gmail.com</Anchor>{" "}
-              and they will respond in a reasonable time.
+              you use the Application and for a reasonable time thereafter. You
+              may delete your account from within the Application (for example,
+              through the in-app settings where account deletion is offered). If
+              you need help or wish to request deletion outside the Application,
+              please use the{" "}
+              <Anchor href="/contact">contact form</Anchor> and the Service
+              Provider will respond in a reasonable time.
             </Text>
           </section>
 
@@ -190,11 +235,11 @@ const PrivacyPolicyPage: React.FC = () => {
               information from children under 13 years of age. In the case the
               Service Provider discover that a child under 13 has provided
               personal information, the Service Provider will immediately delete
-              this from their servers. If you are a parent or guardian and you
+              this from their servers.               If you are a parent or guardian and you
               are aware that your child has provided us with personal
-              information, please contact the Service Provider (
-              <Anchor href="mailto:tyamap03@gmail.com">tyamap03@gmail.com</Anchor>
-              ) so that they will be able to take the necessary actions.
+              information, please contact the Service Provider using the{" "}
+              <Anchor href="/contact">contact form</Anchor> so that they will be
+              able to take the necessary actions.
             </Text>
           </section>
 
@@ -244,9 +289,8 @@ const PrivacyPolicyPage: React.FC = () => {
             <Text component="p" size="sm">
               If you have any questions regarding privacy while using the
               Application, or have questions about the practices, please contact
-              the Service Provider via email at{" "}
-              <Anchor href="mailto:tyamap03@gmail.com">tyamap03@gmail.com</Anchor>
-              .
+              the Service Provider through the{" "}
+              <Anchor href="/contact">contact form</Anchor>.
             </Text>
           </section>
       </Stack>

@@ -46,12 +46,36 @@ const PrivacyPolicyJaPage: React.FC = () => {
             </List.Item>
             <List.Item>本アプリ全体の利用時間</List.Item>
             <List.Item>ご利用のモバイル端末の OS 情報</List.Item>
+            <List.Item>
+              サインイン時にご提供いただくアカウント識別子やプロフィール情報（メールアドレス、表示名など）
+            </List.Item>
+            <List.Item>
+              Google または Apple でサインインする場合、各サービスの設定に従い提供される識別子やプロフィール情報
+            </List.Item>
+            <List.Item>
+              プッシュ通知の配信に用いるデバイストークン（Firebase Cloud Messaging）
+            </List.Item>
+            <List.Item>
+              クラッシュログやスタックトレースなどの診断情報（Firebase によるクラッシュ解析）
+            </List.Item>
+            <List.Item>
+              広告の最適化のため、利用者が許可した場合に取得する広告識別子（iOS の IDFA など。下記 ATT に関する説明を参照）
+            </List.Item>
           </List>
           <Text component="p" size="sm" mt="sm">
             本アプリは、モバイル端末の正確な位置情報を取得しません。
           </Text>
           <Text component="p" size="sm" mt="sm">
             本アプリは、データ処理や機能提供のために人工知能（AI）技術を使用しません。
+          </Text>
+          <Text component="p" size="sm" mt="sm">
+            広告配信や計測のため、対応端末では Apple の App Tracking Transparency（ATT）に基づき、
+            広告識別子（IDFA）へのアクセスを求める場合があります。利用者はシステムのダイアログで許可または拒否を選択できます。
+            拒否した場合でも本アプリの主要な機能は利用できますが、広告のパーソナライズが行われにくくなる場合があります。
+          </Text>
+          <Text component="p" size="sm" mt="sm">
+            Cloud Firestore のオフライン永続化が有効な場合、ネットワークが利用できないときにも本アプリが動作できるよう、
+            端末内にデータのキャッシュが保存されることがあります。当該キャッシュは、端末のセキュリティおよびアカウント設定の範囲で管理されます。
           </Text>
           <Text component="p" size="sm" mt="sm">
             サービス提供者は、重要なお知らせ、必要な通知、またはマーケティング上のご案内を行うため、
@@ -68,9 +92,10 @@ const PrivacyPolicyJaPage: React.FC = () => {
             2. 第三者サービスへの提供
           </Title>
           <Text component="p" size="sm" mb="sm">
-            本アプリおよびサービスの改善のため、集計済みかつ匿名化されたデータのみが、
-            定期的に外部サービスへ送信される場合があります。サービス提供者は、
-            本プライバシーポリシーに記載された方法で、情報を第三者と共有することがあります。
+            本アプリは、認証、分析、クラッシュレポート、広告、プッシュ通知、リモート設定などの目的で、
+            本プライバシーポリシーに記載のとおり第三者サービスを利用します。
+            機能提供に必要な範囲で、アカウントや端末を識別する情報が送信される場合があります。
+            サービス提供者は、本プライバシーポリシーに記載された方法で、情報を第三者と共有することがあります。
           </Text>
           <Text component="p" size="sm" mb="sm">
             本アプリでは、独自のプライバシーポリシーを持つ第三者サービスを利用しています。
@@ -79,7 +104,7 @@ const PrivacyPolicyJaPage: React.FC = () => {
           <List size="sm" spacing="xs" withPadding>
             <List.Item>
               <Anchor
-                href="https://support.google.com/admob/answer/6128543?hl=en"
+                href="https://support.google.com/admob/answer/6128543?hl=ja"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -97,20 +122,30 @@ const PrivacyPolicyJaPage: React.FC = () => {
             </List.Item>
             <List.Item>
               <Anchor
-                href="https://firebase.google.com/support/privacy/"
+                href="https://firebase.google.com/support/privacy"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Firebase Crashlytics
+                Firebase Authentication、Crashlytics、Cloud Messaging、Remote
+                Config、Cloud Firestore
               </Anchor>
             </List.Item>
             <List.Item>
               <Anchor
-                href="https://www.revenuecat.com/privacy"
+                href="https://policies.google.com/privacy?hl=ja"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                RevenueCat
+                Google サインイン
+              </Anchor>
+            </List.Item>
+            <List.Item>
+              <Anchor
+                href="https://www.apple.com/jp/legal/privacy/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Sign in with Apple
               </Anchor>
             </List.Item>
           </List>
@@ -140,6 +175,7 @@ const PrivacyPolicyJaPage: React.FC = () => {
           <Text component="p" size="sm">
             利用者は、本アプリをアンインストールすることで、本アプリによる情報収集を容易に停止できます。
             アンインストールには、端末の標準機能またはアプリマーケット等で提供される通常の手順をご利用ください。
+            また、ATT に対応した端末では、初回のダイアログ表示後も、端末の設定からトラッキングの許可・拒否を変更できます。
           </Text>
         </section>
 
@@ -149,9 +185,10 @@ const PrivacyPolicyJaPage: React.FC = () => {
           </Title>
           <Text component="p" size="sm">
             サービス提供者は、利用者が本アプリを利用している期間中、およびその後合理的な期間、
-            利用者提供データを保持します。本アプリを通じて提供した利用者提供データの削除を希望される場合は、
-            <Anchor href="mailto:tyamap03@gmail.com">tyamap03@gmail.com</Anchor>
-            までご連絡ください。合理的な期間内に対応します。
+            利用者提供データを保持します。アカウントの削除は、本アプリ内の設定など、アプリ内で案内される方法から行えます。
+            アプリ外からの削除のご依頼や、その他のお手続きが必要な場合は、
+            <Anchor href="/ja/contact">お問い合わせフォーム</Anchor>
+            からご連絡ください。合理的な期間内に対応します。
           </Text>
         </section>
 
@@ -169,8 +206,8 @@ const PrivacyPolicyJaPage: React.FC = () => {
             万が一、13歳未満の子どもが個人情報を提供したことが判明した場合、
             サービス提供者は当該情報を速やかに削除します。保護者の方で、
             お子さまが個人情報を提供したことにお気づきの場合は、
-            <Anchor href="mailto:tyamap03@gmail.com">tyamap03@gmail.com</Anchor>
-            までご連絡ください。必要な対応を行います。
+            <Anchor href="/ja/contact">お問い合わせフォーム</Anchor>
+            からご連絡ください。必要な対応を行います。
           </Text>
         </section>
 
@@ -214,8 +251,8 @@ const PrivacyPolicyJaPage: React.FC = () => {
           </Title>
           <Text component="p" size="sm">
             本アプリの利用におけるプライバシーや運用についてご質問がある場合は、
-            <Anchor href="mailto:tyamap03@gmail.com">tyamap03@gmail.com</Anchor>
-            までメールでご連絡ください。
+            <Anchor href="/ja/contact">お問い合わせフォーム</Anchor>
+            からご連絡ください。
           </Text>
         </section>
       </Stack>
