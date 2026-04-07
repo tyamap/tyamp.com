@@ -33,7 +33,7 @@ const elements = [
   { name: '事業者名', desc: '山下智矢' },
   { name: '所在地', desc: '請求があったら遅延なく開示します。' },
   { name: '電話番号', desc: '請求があったら遅延なく開示します。' },
-  { name: 'メールアドレス', desc: 'tom333my@outlook.com' },
+  { name: 'メールアドレス', desc: 'tyamap03@gmail.com' },
   { name: '運営統括責任者', desc: '山下智矢' },
   { name: '追加料金手数料等の追加料金', desc: '特にありません。' },
   { name: '交換及び返品', desc: 'お客様都合による返品・交換は原則として対応しておりません。' },

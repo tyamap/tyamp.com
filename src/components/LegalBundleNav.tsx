@@ -66,7 +66,7 @@ export function LegalBundleNav(props: LegalBundleNavProps) {
                   to={item.to}
                   size="sm"
                   fw={500}
-                  underline="hover"
+                  underline
                 >
                   {item.label}
                 </Anchor>
