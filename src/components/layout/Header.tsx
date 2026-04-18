@@ -41,7 +41,7 @@ const Header = (props: HeaderProps) => {
         <ActionIcon
           variant="outline"
           color="steelblue"
-          title="Toggle language to English"
+          title="Toggle language to Japanese"
           component={Link}
           to={`/ja${location.pathname}`}
         >
@@ -62,7 +62,7 @@ const Header = (props: HeaderProps) => {
           color="steelblue"
           title="Go to contact page"
           component={Link}
-          to="/ja/contact"
+          to="/contact"
         >
           <IconMail size="1.1rem" />
         </ActionIcon>

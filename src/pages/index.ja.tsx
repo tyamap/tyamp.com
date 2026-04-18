@@ -6,15 +6,15 @@ import PageTitle from "src/components/PageTitle"
 import SEO from "src/components/SEO"
 
 const categories = ["Programming Languages", "Frameworks", "Databases", "Tools", "Clouds", "Others"]
-const currentYear = new Date().getFullYear();
-
-const skillYears = (skill: { startYear?: number | null; isHobby?: boolean | null }) => {
-  if (skill.isHobby || !skill.startYear) return null;
-  return currentYear - skill.startYear;
-};
 
 const IndexPage = ({ data }: PageProps<Queries.Query>) => {
   const profile = data.contentfulProfile;
+  const currentYear = new Date().getFullYear();
+
+  const skillYears = (skill: { startYear?: number | null; isHobby?: boolean | null }) => {
+    if (skill.isHobby || !skill.startYear) return null;
+    return currentYear - skill.startYear;
+  };
 
   return (
     <Layout>
@@ -25,7 +25,7 @@ const IndexPage = ({ data }: PageProps<Queries.Query>) => {
       <Text mb="sm" sx={{ whiteSpace: "break-spaces" }}>
         {profile?.description?.description}
       </Text>
-      <Title order={2} id="about" mb="md">
+      <Title order={2} id="skills" mb="md">
         Skills
       </Title>
       <Text mb="sm">アイコンにマウスオーバーして経験年数を参照できます。</Text>
@@ -58,6 +58,7 @@ const IndexPage = ({ data }: PageProps<Queries.Query>) => {
                         <img
                           src={skill?.icon?.file?.url || ""}
                           alt={`${skill?.name} icon`}
+                          title={`${skill?.name}: ${years !== null ? `${years}+ 年` : "Hobby"}`}
                           height={32}
                           width={32}
                         />

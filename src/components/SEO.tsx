@@ -17,12 +17,17 @@ const SEO = ({ title, description, locale, pathname, children }: SEOProps) => {
     social,
   } = useSiteMetadata();
 
+  const normalizedPath = pathname || "/";
+  const isRoot = normalizedPath === "/";
+  const enPath = normalizedPath;
+  const jaPath = isRoot ? "/ja" : `/ja${normalizedPath}`;
+
   const seo = {
     title: title ? `${title} | ${defaultTitle}` : defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image}`,
-    url: `${siteUrl}${pathname || ``}`,
-    type: pathname ? "article" : "website",
+    url: `${siteUrl}${locale === "ja" ? jaPath : enPath}`,
+    type: isRoot ? "website" : "article",
     social,
   };
 
@@ -38,6 +43,9 @@ const SEO = ({ title, description, locale, pathname, children }: SEOProps) => {
       <meta property="og:url" content={seo.url} />
       <meta property="og:image" content={seo.image} />
       <meta property="og:type" content={seo.type} />
+      <link rel="alternate" hrefLang="en" href={`${siteUrl}${enPath}`} />
+      <link rel="alternate" hrefLang="ja" href={`${siteUrl}${jaPath}`} />
+      <link rel="alternate" hrefLang="x-default" href={`${siteUrl}${enPath}`} />
       {seo.social?.twitter && (
         <>
           <meta name="twitter:card" content="summary_large_image" />

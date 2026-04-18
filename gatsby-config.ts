@@ -11,7 +11,7 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `tyamap.com`,
     description: 'Welcome to my website! I\'m a full-stack web engineer. I approach freelancing as a side gig alongside my primary job.',
-    image: '/icon.jpg',
+    image: '/ogp.png',
     siteUrl: `https://www.tyamap.com`,
     social: {
       twitter: `@tyamap03`,
@@ -27,6 +27,27 @@ const config: GatsbyConfig = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'tyamap.com',
+        short_name: 'tyamap',
+        start_url: '/',
+        background_color: '#ffffff',
+        theme_color: '#12b886',
+        display: 'standalone',
+        icon: 'static/icon-square.png',
+        lang: 'en',
+        localize: [
+          {
+            start_url: '/ja/',
+            lang: 'ja',
+            name: 'tyamap.com',
+            short_name: 'tyamap',
+          },
+        ],
+      },
+    },
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
