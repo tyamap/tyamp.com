@@ -6,7 +6,7 @@ type Post = {
   link: string | null
   pubDate: string | null
   thumbnail?: string | null
-  platform: 'Zenn' | 'Qiita' | 'note'
+  platform: 'Zenn' | 'Qiita' | 'note' | 'Speaker Deck'
 }
 
 export const useFeedPosts = () => {
@@ -36,10 +36,29 @@ export const useFeedPosts = () => {
       }
       totalCount
     }
+    allFeedSpeakerdeck {
+      nodes {
+        id
+        title
+        link
+        pubDate
+        media {
+          thumbnail {
+            attrs {
+              url
+            }
+          }
+        }
+      }
+      totalCount
+    }
   }
   `)
 
-  const totalCount = data.allFeedZenn.totalCount + data.allFeedNote.totalCount
+  const totalCount =
+    data.allFeedZenn.totalCount +
+    data.allFeedNote.totalCount +
+    data.allFeedSpeakerdeck.totalCount
 
   const zennPosts: Post[] = data.allFeedZenn.nodes.map((post) => {
     return {
@@ -55,9 +74,16 @@ export const useFeedPosts = () => {
       platform: 'note',
     }
   })
+  const speakerdeckPosts: Post[] = data.allFeedSpeakerdeck.nodes.map((post) => {
+    return {
+      ...post,
+      thumbnail: post.media?.thumbnail?.attrs?.url,
+      platform: 'Speaker Deck',
+    }
+  })
 
   // 日付でソート
-  const nodes = [...zennPosts, ...notePosts].sort((a, b) => {
+  const nodes = [...zennPosts, ...notePosts, ...speakerdeckPosts].sort((a, b) => {
     // Date型で比べる
     const aDate = new Date(a.pubDate!)
     const bDate = new Date(b.pubDate!)

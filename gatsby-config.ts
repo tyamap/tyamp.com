@@ -92,6 +92,18 @@ const config: GatsbyConfig = {
       },
     },
     {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://speakerdeck.com/tyamap.atom`,
+        name: `Speakerdeck`,
+        parserOption: {
+          customFields: {
+            item: ['media:thumbnail']
+          }
+        }
+      },
+    },
+    {
       resolve: 'gatsby-plugin-i18n',
       options: {
         langKeyDefault: 'en',
