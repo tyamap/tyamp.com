@@ -11,6 +11,7 @@ const bundle: LegalPageBundle = {
   id: "saikuru-ja",
   title: "SAIKURU",
   items: [
+    { label: "サポート", to: "/ja/saikuru/support" },
     { label: "プライバシーポリシー", to: "/ja/saikuru/privacy-policy" },
     { label: "利用規約", to: "/ja/saikuru/terms" },
   ],

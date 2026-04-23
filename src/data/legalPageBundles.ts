@@ -16,6 +16,7 @@ export const LEGAL_PAGE_BUNDLES: Record<string, LegalPageBundle> = {
     id: "saikuru",
     title: "SAIKURU",
     items: [
+      { label: "Support", to: "/saikuru/support" },
       { label: "Privacy Policy", to: "/saikuru/privacy-policy" },
       { label: "Terms & Conditions", to: "/saikuru/terms" },
       // LP 追加時: { label: '…', to: '/saikuru' },
